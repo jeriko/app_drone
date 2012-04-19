@@ -1,4 +1,5 @@
 require 'pathname'
+require 'erb'
 
 # require lib files
 lib_files = %w(version template drone object_extensions)

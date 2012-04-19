@@ -1,0 +1,7 @@
+1. Replace (self >> Drone).method syntax within drones (use method missing)
+e.g. gems.add('x') -> method_missing('gems') -> (self >> gems.classify.constantize).send
+
+2. Drone dependencies
+e.g. depends Stylesheets, Gems
+- template complains if render is called and dependencies are not met
+

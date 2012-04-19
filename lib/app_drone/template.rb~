@@ -1,5 +1,5 @@
 class AppDrone::Template
-  def initialize; @drones = {}; @directives = [] end
+  def initialize; @drones = {}; @directives = {} end
 
   def add(klass,*params)
     @drones[klass] = klass.new(self, params.first) # no idea why `.first` is required..
@@ -13,18 +13,26 @@ class AppDrone::Template
     return i_klass
   end
   
-  def do!(d); @directives << d end
+  def leftover_directives; @directives[:leftovers] || [] end
+  def overridden_generator_methods; @directives.keys - [:leftovers] end
+
+  def do!(d,drone);
+    generator_method = drone.class.generator_method || :leftovers
+    (@directives[generator_method] ||= []) << d
+  end
   
   def render!
-    return unless @directives.empty?
+    return if @rendered
     drone_objects.map(&:align)
     drone_objects.map(&:execute)
+    @rendered = true
   end
 
   def render_with_wrapper
     render!
-    template_path = './lib/template.erb'
-    snippet = ERB.new File.read(template_path)
+    template_path = '/template.erb'
+    full_path = File.dirname(__FILE__) + template_path
+    snippet = ERB.new File.read(full_path)
     return snippet.result(binding)
   end
 

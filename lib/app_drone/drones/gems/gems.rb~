@@ -1,10 +1,15 @@
 module AppDrone
-class Gems < Integration
+class Gems < Drone
+  owns_generator_method :gemfile
   attr_accessor :gems
   @@gem = Struct.new('Gem', :name, :opts)
+
+  def setup
+    self.gems = []
+  end
+
   def add(g,*opts)
-    new_gem = @@gem.new(g,*opts)
-    (self.gems ||= []) << new_gem
+    self.gems << @@gem.new(g,*opts)
   end
 
   def execute

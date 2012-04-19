@@ -25,15 +25,17 @@ class Drone
   def setup; end
 
   def render(partial)
-    template_path = "./drones/#{self.class.underscore}/#{partial}.erb" # TODO fix me
-    snippet = ERB.new File.read(template_path)
+    class_name = self.class.to_s.split('::').last.underscore
+    template_path = "/drones/#{class_name}/#{partial}.erb"
+    full_path = File.dirname(__FILE__) + template_path
+    snippet = ERB.new File.read(full_path)
     output = snippet.result(binding)
     output = "# --- \n# #{self.class.to_s}\n# ---\n" + output if true
     return output
   end
 
   def do!(partial)
-    @template.do! render(partial)
+    @template.do! render(partial), self
   end
 
   # DSL: Integration-specific options
@@ -45,6 +47,9 @@ class Drone
     def params
       @params
     end
+
+    def owns_generator_method(m); @generator_method = m end
+    def generator_method; @generator_method end
   end
 
 end

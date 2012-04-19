@@ -9,11 +9,11 @@ class AppDroneTest < Test::Unit::TestCase
     @template = Template.new
   end
 
-  # TODO template load path is broken
-
   def test_gems
-    @template.add Gems, vendor: true
-    puts Bootstrap.params
+    @template.add Gems
+    @template.add Stylesheets
+    @template.add Bootstrap, vendor: true
+    @template.render_to_screen
   end
 end
 
