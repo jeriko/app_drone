@@ -1,6 +1,6 @@
-Param = Struct.new('Param',:name,:type,:options)
+AppDrone::Param = Struct.new('Param',:name,:type,:options)
 
-class Integration
+class AppDrone::Integration
   # align: set up variables, pass off to other scripts
   # execute: actual install process
 

@@ -1,3 +1,4 @@
+module AppDrone
 class Gems < Integration
   attr_accessor :gems
   @@gem = Struct.new('Gem', :name, :opts)

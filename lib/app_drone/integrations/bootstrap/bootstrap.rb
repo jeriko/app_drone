@@ -1,3 +1,4 @@
+module AppDrone
 class Bootstrap < Integration
   param :vendor, :boolean, info: 'download a local copy into the repo', blah: 'yep'
   param :responsive, :boolean, info: 'include responsive grid'
@@ -25,4 +26,5 @@ class Bootstrap < Integration
     end
   end
 
+end
 end
