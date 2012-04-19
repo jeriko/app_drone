@@ -1,0 +1,15 @@
+erb_index_path = File.join %w(app views layouts application.html.erb)
+@generator.remove_file(erb_index_path)
+slim_index_path = File.join %w(app views layouts application.html.slim)
+@generator.create_file slim_index_path, <<-SLIM
+doctype 5
+html
+  head
+    title #{app_name}
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body class=controller_name
+    = yield
+SLIM

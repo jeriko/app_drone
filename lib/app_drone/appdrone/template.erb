@@ -1,0 +1,33 @@
+class AppBuilder < Rails::AppBuilder
+  include Thor::Actions
+  include Thor::Shell
+
+  # Express app templating for Rails
+  # ------------------------------------
+  # USAGE:
+  #   1. run: `rails new app_name --builder=path/to/builder.rb` (URI's work here too)
+  #   2. ???
+  #   3. PROFIT!
+
+  def gemfile
+    # invoke default behaviour via `super`
+    # alternatively, use `template 'Gemfile'`, but let's not step on toes
+    super
+    # TODO GEMFILE should go here, ruh oh
+  end
+
+  def test
+    return
+    # TODO
+    # skips test framework, but we can probably just bastardize the options in the same way as with :skip_bundle
+    # either make `test` build the actual directories etc., or use a script
+    # either way, this method is stupid.
+  end
+
+  def leftovers
+    <%= @directives.join("\n") %>
+    rake 'db:migrate'
+    say "She's all yours, sparky!\n\n", :green
+  end
+
+end
