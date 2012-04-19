@@ -1,4 +1,5 @@
-class Stylesheets < Integration
+module AppDrone
+class Stylesheets < Drone
   attr_accessor :requires, :imports
 
   def setup
@@ -21,4 +22,5 @@ class Stylesheets < Integration
     # TODO render css utils (or make this a separate integration)
   end
 
+end
 end

@@ -1,4 +1,5 @@
-class Javascripts < Integration
+module AppDrone
+class Javascripts < Drone
   attr_accessor :requires, :onreadies
 
   def setup
@@ -16,4 +17,5 @@ class Javascripts < Integration
     do! :application_coffee
   end
 
+end
 end

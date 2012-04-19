@@ -1,15 +1,15 @@
 class AppDrone::Template
-  def initialize; @integrations = {}; @directives = [] end
+  def initialize; @drones = {}; @directives = [] end
 
   def add(klass,*params)
-    @integrations[klass] = klass.new(self, params.first) # no idea why `.first` is required..
+    @drones[klass] = klass.new(self, params.first) # no idea why `.first` is required..
   end
 
-  def i_objects; @integrations.values end
-  def i_classes; @integrations.keys end
-  def hook?(klass); @integrations[klass].nil? end
+  def drone_objects; @drones.values end
+  def drone_classes; @drones.keys end
+  def hook?(klass); @drones[klass].nil? end
   def hook(klass)
-    raise "No such integration: #{klass}" unless i_klass = @integrations[klass]
+    raise "No such drones: #{klass}" unless i_klass = @drones[klass]
     return i_klass
   end
   
@@ -17,8 +17,8 @@ class AppDrone::Template
   
   def render!
     return unless @directives.empty?
-    i_objects.map(&:align)
-    i_objects.map(&:execute)
+    drone_objects.map(&:align)
+    drone_objects.map(&:execute)
   end
 
   def render_with_wrapper

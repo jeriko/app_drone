@@ -1,4 +1,5 @@
-class SimpleForm < Integration
+module AppDrone
+class SimpleForm < Drone
 
   def align
     (self >> Gems).add 'simple_form'
@@ -9,4 +10,5 @@ class SimpleForm < Integration
     # TODO bootstrap cross-integration
     do! :install
   end
+end
 end

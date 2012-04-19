@@ -1,4 +1,5 @@
-class Guard < Integration
+module AppDrone
+class Guard < Drone
   # TODO accepts :guard_ties
 
   def align
@@ -9,4 +10,5 @@ class Guard < Integration
     # set up guardfile etc.
     # set up files for dependencies
   end
+end
 end

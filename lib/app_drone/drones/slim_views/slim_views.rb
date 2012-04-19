@@ -1,4 +1,5 @@
-class SlimViews < Integration
+module AppDrone
+class SlimViews < Drone
   # TODO accepts :options # header etc.
 
   def align
@@ -8,4 +9,5 @@ class SlimViews < Integration
   def execute
     do! :application_slim
   end
+end
 end

@@ -1,5 +1,5 @@
 module AppDrone
-class Gems < Integration
+class Gems < Drone
   attr_accessor :gems
   @@gem = Struct.new('Gem', :name, :opts)
   def add(g,*opts)
@@ -11,4 +11,5 @@ class Gems < Integration
      do! :gem_entries
   end
 
+end
 end

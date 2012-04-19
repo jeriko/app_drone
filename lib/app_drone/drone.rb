@@ -1,6 +1,8 @@
-AppDrone::Param = Struct.new('Param',:name,:type,:options)
+module AppDrone
 
-class AppDrone::Integration
+Param = Struct.new('Param',:name,:type,:options)
+
+class Drone
   # align: set up variables, pass off to other scripts
   # execute: actual install process
 
@@ -23,7 +25,7 @@ class AppDrone::Integration
   def setup; end
 
   def render(partial)
-    template_path = "./integrations/#{self.class.underscore}/#{partial}.erb"
+    template_path = "./drones/#{self.class.underscore}/#{partial}.erb" # TODO fix me
     snippet = ERB.new File.read(template_path)
     output = snippet.result(binding)
     output = "# --- \n# #{self.class.to_s}\n# ---\n" + output if true
@@ -44,5 +46,7 @@ class AppDrone::Integration
       @params
     end
   end
+
+end
 
 end

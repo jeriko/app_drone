@@ -1,4 +1,5 @@
-class Rspec < Integration
+module AppDrone
+class Rspec < Drone
   def align
     (self >> Gems).add 'rspec-rails', group: :test
   end
@@ -6,4 +7,5 @@ class Rspec < Integration
   def execute
     do! :install
   end
+end
 end
