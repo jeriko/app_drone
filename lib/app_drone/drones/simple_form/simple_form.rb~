@@ -1,9 +1,10 @@
+# Incomplete
 module AppDrone
-class SimpleForm < Integration
-
+class SimpleForm < Drone
+  desc "Installs SimpleForm (with custom Bootstrap integration)"
   def align
-    (self >> Gems).add 'simple_form'
-    (self >> Gems).add 'country_select'
+    gem.add 'simple_form'
+    gem.add 'country_select'
   end
 
   def execute

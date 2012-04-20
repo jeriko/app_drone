@@ -1,9 +1,11 @@
+# Incomplete
 module AppDrone
-class SlimViews < Drone
+class SlimView < Drone
+  desc "Sets up application.html.slim with shiny goodness"
   # TODO accepts :options # header etc.
 
   def align
-    (self >> Gems).add 'slim-rails'
+    bundle.add 'slim-rails'
   end
 
   def execute

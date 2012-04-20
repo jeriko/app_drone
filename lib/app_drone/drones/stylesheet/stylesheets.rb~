@@ -1,5 +1,9 @@
+# Incomplete
 module AppDrone
-class Stylesheets < Drone
+class Stylesheet < Drone
+  desc "Generates application.css.sass with manifest options and imports"
+  # TODO are manifests necessary? Favor @import
+
   attr_accessor :requires, :imports
 
   def setup

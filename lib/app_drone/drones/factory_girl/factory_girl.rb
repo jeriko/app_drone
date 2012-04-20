@@ -1,7 +1,9 @@
+# Incomplete
 module AppDrone
 class FactoryGirl < Drone
+  desc "Installs Factory Girl for test fixtures"
   def align
-    (self >> Gems).add 'factory_girl_rails', group: :test
+    bundle.add 'factory_girl_rails', group: :test
   end
 
   def execute

@@ -1,7 +1,9 @@
+# Incomplete
 module AppDrone
 class RankedModel < Drone
+  desc "Installs RankedModel"
   def align
-    (self >> Gems).add 'ranked_model'
+    bundle.add 'ranked_model'
   end
 end
 end

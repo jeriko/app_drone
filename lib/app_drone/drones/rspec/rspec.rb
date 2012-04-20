@@ -1,7 +1,9 @@
+# Complete?
 module AppDrone
 class Rspec < Drone
+  desc "Installs RSpec for testing"
   def align
-    (self >> Gems).add 'rspec-rails', group: :test
+    bundle.add 'rspec-rails', group: :test
   end
 
   def execute

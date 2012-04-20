@@ -1,5 +1,7 @@
+# Incomplete
 module AppDrone
-class Javascripts < Integration
+class Javascripts < Drone
+  desc "Generates application.js.coffee with manifest options and jQuery load hooks"
   attr_accessor :requires, :onreadies
 
   def setup

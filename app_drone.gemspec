@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = 'app_drone'
   gem.require_paths = ['lib']
   gem.version       = AppDrone::VERSION
+
+  #gem.add_dependency('activesupport', '>= 3.2.0')
+
 end

@@ -9,7 +9,7 @@ class AppDrone::Template
   def drone_classes; @drones.keys end
   def hook?(klass); @drones[klass].nil? end
   def hook(klass)
-    raise "No such drones: #{klass}" unless i_klass = @drones[klass]
+    raise "No such drone: #{klass}" unless i_klass = @drones[klass]
     return i_klass
   end
   
@@ -21,8 +21,19 @@ class AppDrone::Template
     (@directives[generator_method] ||= []) << d
   end
   
+  def check_dependencies
+    puts drone_classes
+    drone_classes.each { |drone_class|
+      drone_class.dependencies.each { |d|
+        dependency = d.to_s.classify
+        raise "#{drone_class} depends on #{dependency}, but it is not included in the template." unless drone_classes.include?(d)
+      }
+    }
+  end
+
   def render!
     return if @rendered
+    check_dependencies
     drone_objects.map(&:align)
     drone_objects.map(&:execute)
     @rendered = true

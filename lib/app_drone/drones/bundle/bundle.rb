@@ -1,6 +1,9 @@
+# Complete!
 module AppDrone
-class Gems < Drone
+class Bundle < Drone
+  desc "Manages gem installations"
   owns_generator_method :gemfile
+
   attr_accessor :gems
   @@gem = Struct.new('Gem', :name, :opts)
 

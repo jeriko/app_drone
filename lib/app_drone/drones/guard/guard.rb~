@@ -1,5 +1,6 @@
 module AppDrone
-class Guard < Integration
+class Guard < Drone
+  desc "Installs Guard & watcher scripts"
   # TODO accepts :guard_ties
 
   def align

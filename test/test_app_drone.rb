@@ -10,8 +10,9 @@ class AppDroneTest < Test::Unit::TestCase
   end
 
   def test_gems
-    @template.add Gems
-    @template.add Stylesheets
+    @template.add Bundle
+    @template.add Stylesheet
+    @template.add Javascript
     @template.add Bootstrap, vendor: true
     @template.render_to_screen
   end
