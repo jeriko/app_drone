@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ['Daniel Davey']
   gem.email         = ['whoisdanieldavey@gmail.com']
   gem.description   = %q{Give your rails apps a kickstart}
-  gem.summary       = %q{Generates rails templates to start your app on good footing}
+  gem.summary       = %q{Generates rails templates to help start your app on good footing}
   gem.homepage      = 'https://github.com/jeriko/app_drone'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
