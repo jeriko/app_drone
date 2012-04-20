@@ -156,6 +156,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Stylesheet
 - Javascript
 - SlimView
+- Cleanup
  
 
 ### Frozen drones (currently in development)
