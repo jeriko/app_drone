@@ -20,7 +20,7 @@ class AppDroneTest < Test::Unit::TestCase
   def test_gems
     template = Template.new
     template.add :bundle
-    puts Drone.drones.to_s
+    puts AppDrone::Bootstrap.params
     #@template.add Stylesheet
     #@template.add Javascript
     #@template.render_to_screen
