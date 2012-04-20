@@ -9,7 +9,9 @@ class Javascript < Drone
     self.onreadies = []
     self.add_require 'jquery'
     self.add_require 'jquery_ujs'
-    self.add_require 'jquery-ui' # TODO if ui, otherwise vendor
+
+    # TODO ui gem / vendor (for customisation)
+    # self.add_require 'jquery-ui'
   end
 
   def add_require(r); self.requires << r end

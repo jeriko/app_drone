@@ -13,7 +13,6 @@ class AppDroneTest < Test::Unit::TestCase
     @template.add Bundle
     @template.add Stylesheet
     @template.add Javascript
-    @template.add Bootstrap, vendor: true
     @template.render_to_screen
   end
 end

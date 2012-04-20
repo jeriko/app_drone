@@ -35,11 +35,13 @@ Build up your template with the drones you want to include, and then render the 
     # => out.rb
 
 Drones may have dependencies, which are defined on the class, using the `depends_on` method:
+
     class AppDrone::MyDrone < Drone
       depends SuperDrone, YourMom
     end
 
 Note that most drones depend on Bundle, Stylesheet and Javascript. See a list of drone dependencies with `AppDrone::DroneClass.dependencies`, e.g.:
+
     AppDrone::Bootstrap.dependencies
     # => [AppDrone::Bundle, AppDrone::Stylesheet, AppDrone::Javascript]
 
@@ -55,12 +57,14 @@ Optionally, a `setup` method can be defined to get new drones in order (triggere
 You can also use `desc` in the class declaration to explain what the drone does (mostly for shiny UI purposes), and supply optional params with `param :param_name, :type, *opts` that the drone accepts to modify its behaviour.
 
 Drones can talk to eachother via a proxy on the template they are included in, using the class name as a reference - note that the class instance of the parent template is actually referenced, not the static class. For example, a drone might contain the following code:
+
     def align
       (self >> Bundle).add 'my_gem'
       (self >> Stylesheet).add_import 'shiny_sheet'
     end
 
 For convenience, `method_missing` is used to allow you to use the underscore'd name of a class to talk to it's template instance directly:
+
     def align
       bundle.add 'my_gem'
       stylesheet.add_import 'shiny_sheet'
