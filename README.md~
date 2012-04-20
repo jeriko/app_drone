@@ -67,7 +67,7 @@ Drones are simple classes that implement `align` and `execute` methods. When a t
 
 Each drone lives in it's own folder in `lib/app_drone/drones`, and can include `.erb` templates that are rendered into the main generator template by calling `do! :template_name`. Usually, this would happen in the `execute` function.
 
-Optionally, a `setup` method can be defined to get new drones in order (triggered on Drone.new), e.g. initializing variables and so on.
+Optionally, a `setup` method can be defined to set up variables etc. when a drone instance is added to a template.
 
 You can also use `desc` in the class declaration to explain what the drone does (mostly for shiny UI purposes), and supply optional params with `param :param_name, :type, *opts` that the drone accepts to modify its behaviour.
 
