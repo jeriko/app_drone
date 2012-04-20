@@ -35,7 +35,6 @@ class Drone
   end
 
   def do!(partial)
-    puts self.class
     @template.do! render(partial), self
   end
 
