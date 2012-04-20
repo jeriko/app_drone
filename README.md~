@@ -26,6 +26,8 @@ Or install it yourself as:
 
 Build up your template with the drones you want to include, and then render the full generator script to file. When creating a new Rails app, pass in the generator file path with `rails new --builder=path/to/file`, and voila!
 
+    require 'app_drone'
+    
     t = AppDrone::Template.new
     t.add AppDrone::Bundle
     t.add AppDrone::Stylesheet
@@ -33,6 +35,12 @@ Build up your template with the drones you want to include, and then render the 
     t.add AppDrone::Bootstrap, vendor: true
     t.render_to_file
     # => out.rb
+
+For readability, an underscored symbol version of the class name can be substituted when adding a Drone to a Template:
+
+    t = AppDrone::Template.new
+    t.add :bundle       # adds AppDrone::Bundle
+    t.add :factory_girl # adds AppDrone::FactoryGirl
 
 Drones may have dependencies, which are defined on the class, using the `depends_on` method:
 
@@ -44,6 +52,13 @@ Note that most drones depend on Bundle, Stylesheet and Javascript. See a list of
 
     AppDrone::Bootstrap.dependencies
     # => [AppDrone::Bundle, AppDrone::Stylesheet, AppDrone::Javascript]
+
+To see all available drones (inactives are placed in the drones/zzz folder), use:
+
+    Drone.drones
+    # => [:stylesheet, :javascript, :slim_view, :cleanup, :bundle]
+
+*Note that these are the underscored versions, not the class names.*
 
 
 ## How does it work?

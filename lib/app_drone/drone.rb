@@ -18,10 +18,9 @@ class Drone
   def >>(klass); @template.hook(klass); end
 
   def method_missing(meth, *args, &block)
-    if Drone.drones.include?(meth.to_s)
-      puts "CAUGHT #{meth}"
+    if Drone.drones.include?(meth)
       klass = ('AppDrone::' + meth.to_s.classify).constantize
-      (self >> klass)
+      return (self >> klass)
     else
       super
     end
@@ -72,7 +71,7 @@ class Drone
     def generator_method; @generator_method end
 
     def drones
-      self.descendants.map { |d| d.to_s.split('::').last.underscore }
+      self.descendants.map { |d| d.to_s.split('::').last.underscore.to_sym }
     end
 
   end

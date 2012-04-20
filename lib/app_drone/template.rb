@@ -1,7 +1,8 @@
 class AppDrone::Template
   def initialize; @drones = {}; @directives = {} end
 
-  def add(klass,*params)
+  def add(ref,*params)
+    klass = ref.is_a?(Class)? ref : ('AppDrone::' + ref.to_s.classify).constantize
     @drones[klass] = klass.new(self, params.first) # no idea why `.first` is required..
   end
 
@@ -22,7 +23,6 @@ class AppDrone::Template
   end
   
   def check_dependencies
-    puts drone_classes
     drone_classes.each { |drone_class|
       drone_class.dependencies.each { |d|
         dependency = d.to_s.classify
