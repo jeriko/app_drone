@@ -1,28 +1,27 @@
-# Incomplete
+# Complete
 module AppDrone
 class Stylesheet < Drone
   desc "Generates application.css.sass with manifest options and imports"
-  # TODO are manifests necessary? Favor @import
+  depends_on :bundle
 
-  attr_accessor :requires, :imports
-  def add_require(r); self.requires << r end
-  def add_import(i); self.imports << i end
+  attr_accessor :pipeline_requires, :imports
+  def pipeline(r); self.pipeline_requires << r end
+  def import(i); self.imports << i end
 
   def setup
-    self.requires = []
+    self.pipeline_requires = []
     self.imports = []
   end
 
   def align
     bundle.add 'therubyracer'
+    # TODO move compass out into its own drone?
     bundle.add 'compass-rails'
-    self.add_import 'compass'
+    self.import 'compass'
   end
 
   def execute
     do! :application_sass
-    # TODO currently using .scss and not .sass, switch to the cleaner syntax
-    # TODO render css utils (or make this a separate integration)
   end
 
 end

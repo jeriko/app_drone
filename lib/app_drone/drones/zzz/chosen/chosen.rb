@@ -5,9 +5,9 @@ class Chosen < Drone
 
   def align
     bundle.add 'chosen-rails'
-    stylesheet.add_require 'chosen'
-    javascript.add_require 'chosen-jquery'
-    javascript.add_onready "$('.chzn-select').chosen();"
+    stylesheet.pipeline 'chosen'
+    javascript.pipeline 'chosen-jquery'
+    javascript.on_ready "$('.chzn-select').chosen();"
   end
 end
 end

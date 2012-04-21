@@ -2,9 +2,11 @@
 module AppDrone
 class SimpleForm < Drone
   desc "Installs SimpleForm (with custom Bootstrap integration)"
+  param :country_select, :boolean, info: 'Add country_select for listing countries'
+
   def align
-    gem.add 'simple_form'
-    gem.add 'country_select'
+    bundle.add 'simple_form'
+    bundle.add 'country_select' if params[:country_select]
   end
 
   def execute

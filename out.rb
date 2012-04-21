@@ -21,8 +21,12 @@ class AppBuilder < Rails::AppBuilder
   def gemfile
     super
 # --- 
-# AppDrone::Gems
+# AppDrone::Bundle
 # ---
+@generator.gem 'therubyracer'
+@generator.gem 'compass-rails'
+@generator.gem 'slim-rails'
+@generator.gem 'high_voltage'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -33,7 +37,66 @@ run_bundle
 
 
   def leftovers
-    
+    # --- 
+# AppDrone::Javascript
+# ---
+js_asset_path = File.join %w(app assets javascripts application.js)
+@generator.remove_file(js_asset_path)
+@coffee_asset_path = File.join %w(app assets javascripts application.js.coffee)
+@generator.create_file @coffee_asset_path, <<-COFFEE
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
+$(document).ready ->
+  
+
+COFFEE
+
+# --- 
+# AppDrone::Stylesheet
+# ---
+@css_asset_path = File.join %w(app assets stylesheets application.css)
+@generator.remove_file(@css_asset_path)
+@sass_asset_path = File.join %w(app assets stylesheets application.css.sass)
+@generator.create_file @sass_asset_path, <<-SASS
+/*= require_self */
+
+@import 'compass'
+
+SASS
+
+# --- 
+# AppDrone::SlimView
+# ---
+erb_index_path = File.join %w(app views layouts application.html.erb)
+@generator.remove_file(erb_index_path)
+slim_index_path = File.join %w(app views layouts application.html.slim)
+@generator.create_file slim_index_path, <<-SLIM
+doctype 5
+html
+  head
+    title #{app_name}
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body class=controller_name
+    = yield
+SLIM
+
+# --- 
+# AppDrone::HighVoltage
+# ---
+FileUtils.mkpath 'app/views/pages'
+
+# --- 
+# AppDrone::Cleanup
+# ---
+@generator.remove_file File.join %w(public index.html)
+@generator.remove_file File.join %w(app assets images rails.png)
+@generator.remove_file File.join %w(README.rdoc)
+
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green
   end

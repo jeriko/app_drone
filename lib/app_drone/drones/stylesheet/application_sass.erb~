@@ -1,12 +1,9 @@
 @css_asset_path = File.join %w(app assets stylesheets application.css)
 @generator.remove_file(@css_asset_path)
-@sass_asset_path = File.join %w(app assets stylesheets application.css.scss)
+@sass_asset_path = File.join %w(app assets stylesheets application.css.sass)
 @generator.create_file @sass_asset_path, <<-SASS
-/*
-<% requires.each { |r| %>/*= require <%= r %>
-<% } %>/*= require_self
-*/
+<% pipeline_requires.each { |r| %>/*= require <%= r %> */ <% } %>/*= require_self */
 
-<% imports.each { |i| %>@import '<%= i %>';
+<% imports.each { |i| %>@import '<%= i %>'
 <% } %>
 SASS

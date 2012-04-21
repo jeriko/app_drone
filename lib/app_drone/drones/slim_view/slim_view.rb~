@@ -2,10 +2,12 @@
 module AppDrone
 class SlimView < Drone
   desc "Sets up application.html.slim with shiny goodness"
-  # TODO accepts :options # header etc.
+  # TODO param :options # header etc.
+
+  
 
   def align
-    gem.add 'slim-rails'
+    bundle.add 'slim-rails'
   end
 
   def execute

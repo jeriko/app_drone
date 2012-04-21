@@ -2,20 +2,21 @@
 module AppDrone
 class Javascript < Drone
   desc "Generates application.js.coffee with manifest options and jQuery load hooks"
-  attr_accessor :requires, :onreadies
+  attr_accessor :pipeline_requires, :on_readies
 
   def setup
-    self.requires = []
-    self.onreadies = []
-    self.add_require 'jquery'
-    self.add_require 'jquery_ujs'
+    self.pipeline_requires = []
+    self.on_readies = []
 
-    # TODO ui gem / vendor (for customisation)
-    # self.add_require 'jquery-ui'
+    # TODO move this out into JQuery drone with UI option?
+    # TODO jquery-ui bundle or vendor
+
+    self.pipeline 'jquery'
+    self.pipeline 'jquery_ujs'
   end
 
-  def add_require(r); self.requires << r end
-  def add_onready(r); self.onreadies << r end
+  def pipeline(r); self.pipeline_requires << r end
+  def on_ready(r); self.on_readies << r end
 
   def execute
     do! :application_coffee

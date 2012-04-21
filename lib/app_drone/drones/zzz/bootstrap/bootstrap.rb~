@@ -13,8 +13,8 @@ class Bootstrap < Drone
     if params[:vendor]
       # TODO different require paths for stylesheet
     else
-      stylesheet.add_import 'compass_twitter_bootstrap'
-      stylesheet.add_import 'compass_twitter_bootstrap_responsive' if params[:responsive]
+      stylesheet.import 'compass_twitter_bootstrap'
+      stylesheet.import 'compass_twitter_bootstrap_responsive' if params[:responsive]
       # TODO js imports - based on options
     end
   end

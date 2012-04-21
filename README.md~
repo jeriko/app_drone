@@ -156,6 +156,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Stylesheet
 - Javascript
 - SlimView
+- HighVoltage
 - Cleanup
  
 
@@ -174,6 +175,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 ### Future drones (TODO - I'll get there some day!)
 
+- Stylesheet utils
 - SlimViews: Add browser-specific classes to <html>
 - UserAgent blocking script
 - Responders

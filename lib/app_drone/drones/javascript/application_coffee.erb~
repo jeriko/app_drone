@@ -6,7 +6,7 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 <% } %>//= require_tree .
 
 $(document).ready ->
-  <% on_readies.each { |r| %><%= r %>
+  <% onreadies.each { |r| %><%= r %>
 <% } %>
 
 COFFEE

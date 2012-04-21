@@ -14,13 +14,15 @@ class AppDroneTest < Test::Unit::TestCase
     template.add :javascript
     template.add :stylesheet
     template.add :slim_view
+    template.add :high_voltage
+    template.add :cleanup
     template.render_to_file
   end
 
   def test_gems
-    template = Template.new
-    template.add :bundle
-    puts AppDrone::Bootstrap.params
+    #template = Template.new
+    #template.add :bundle
+    #puts AppDrone::Bootstrap.params
     #@template.add Stylesheet
     #@template.add Javascript
     #@template.render_to_screen
