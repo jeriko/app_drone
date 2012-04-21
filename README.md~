@@ -208,7 +208,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - HighVoltage
 - Chosen, by harvestHQ
 - Bootstrap, by Twitter
-- SimpleForm (with optional Country Select and automatic Bootstrap integration)
+- SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
 - Flair (drones use this to demonstrate their working functionality)
 - Cleanup
 
