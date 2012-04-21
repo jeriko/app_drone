@@ -43,8 +43,8 @@ Parameters can be used to modify drone behavior:
 To list parameters for a specific drone:
 
     AppDrone::Bootstrap.params
-    # => #<struct Struct::Param name=:vendor, type=:boolean, options=[{:info=>"download a local copy into the repo"}]>
-    # => #<struct Struct::Param name=:responsive, type=:boolean, options=[{:info=>"include responsive grid"}]>
+    # => #<struct Struct::Param name=:vendor, type=:boolean, options={:info=>"download a local copy into the repo"}>
+    # => #<struct Struct::Param name=:responsive, type=:boolean, options={:info=>"include responsive grid"}>
 
 For readability, you can use the symbol shorthand instead of full class name:
 
@@ -103,6 +103,33 @@ You can use `desc` in the class declaration to explain what the drone does (most
     AppDrone::MyDrone.dependencies
     # => [AppDrone::DeathRay, AppDrone::YourMom]
 
+
+### Drone pairings
+
+Pairing is weaker than a dependency. A template will not render without its dependencies, but pairs are optional inclusions to add extra params and behavior in the presence of another drone.
+
+    class AppDrone::BarbraStreisand < AppDrone::Drone
+      depends_on :bobby_davis_jr
+      pairs_with :celine_dion
+
+      param :wear_human_suit_over_mechaskin, :boolean, info: 'Wear the human disguise'
+      param_with :celine_dion, :celine_in_rehab, :boolean, info: 'Is she currently in rehab?'
+
+      def align
+        bobby_davis_jr.say 'Hi'
+        bobby_davis_jr.introduce 'This is Celine Dion' if pair?(:celine_dion)
+        self.get_changed if param(:wear_human_suit_over_mechaskin)
+      end
+
+      def execute
+        do! :duet_with_bobby
+        if pair?(:celine_dion)
+          do! :coke_with_celine unless param(:celine_in_rehab)
+        end
+      end
+      
+    end
+
 ### Drone behavior parameters
 
     class AppDrone::MyDrone < AppDrone::Drone
@@ -114,6 +141,29 @@ You can use `desc` in the class declaration to explain what the drone does (most
     
     t = AppDrone::Template.new
     t.add :my_drone, lazer_color: 'teh'
+
+
+A drone may also declare a parameter that is only to be used in presence of a dependency.
+
+You can also use `param_with` to specify a parameter that is expected in presence of a pair:
+
+    class AppDrone::EddieIzzard
+      desc 'Professional transvestite'
+
+      pairs_with :heels
+      param_with :heels, :wearing_heels, :boolean, default: true
+
+      def align
+        # defaults to true in the presence of :heels dependency
+        if pair?(:heels) && param(:wearing_heels)
+          puts "I am a professional transvestite, so I can run about in heels and not fall over."
+          puts "Cause if a woman falls over wearing heels, that’s embarrassing."
+          puts "But if a bloke falls over wearing heels, you have to kill yourself."
+          puts "It’s the end of your life. 
+        end
+      end
+
+    end
 
 
 ### Drone communication
@@ -138,7 +188,6 @@ For convenience, `method_missing` is used to allow you to use the underscore'd n
       end
     end
 
-
 **Take a look at existing drones for more info!**
 
 
@@ -160,7 +209,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Showcase (drones use this to demonstrate their working functionality)
 - Chosen, by harvestHQ
 - Cleanup
- 
+- SimpleForm
 
 ### Frozen drones (currently in development)
 
@@ -170,7 +219,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Guard
 - RankedModel
 - RSpec
-- SimpleForm
 
 
 ### Future drones (TODO - I'll get there some day!)
