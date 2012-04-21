@@ -96,10 +96,10 @@ SLIM
 FileUtils.mkpath 'app/views/pages'
 
 # --- 
-# AppDrone::Showcase
+# AppDrone::Flair
 # ---
-@generator.create_file 'app/views/pages/showcase.html.slim', <<-SHOWCASE
-h1 Showcase
+@generator.create_file 'app/views/pages/flair.html.slim', <<-FLAIR
+h1 Flair!
 
 
 
@@ -112,7 +112,7 @@ select.chzn-select
 
 
 
-SHOWCASE
+FLAIR
 
 # --- 
 # AppDrone::Cleanup

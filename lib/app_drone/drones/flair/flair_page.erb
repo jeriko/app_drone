@@ -1,0 +1,11 @@
+@generator.create_file 'app/views/pages/flair.html.slim', <<-FLAIR
+h1 Flair!
+
+<% flairs.each do |drone_name| %>
+
+h3 <%= drone_name.humanize.titleize %>
+
+<%= flair_for(drone_name) %>
+
+<% end %>
+FLAIR

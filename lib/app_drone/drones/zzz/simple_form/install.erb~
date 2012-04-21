@@ -1,0 +1,1 @@
+generate "simple_form:install<%= ' --bootstrap' if @use_bootstrap %>"

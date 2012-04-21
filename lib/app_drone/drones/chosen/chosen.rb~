@@ -8,7 +8,7 @@ class Chosen < Drone
     stylesheet.pipeline 'chosen'
     javascript.pipeline 'chosen-jquery'
     javascript.on_ready "$('.chzn-select').chosen();"
-    showcase.me! self
+    flair!
   end
 end
 end
