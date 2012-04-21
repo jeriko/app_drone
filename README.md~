@@ -157,14 +157,14 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Javascript
 - SlimView
 - HighVoltage
+- Showcase (drones use this to demonstrate their working functionality)
+- Chosen, by harvestHQ
 - Cleanup
  
 
 ### Frozen drones (currently in development)
 
 - Bootstrap
-- Chosen
-- Cleanup
 - FactoryGirl
 - Git
 - Guard

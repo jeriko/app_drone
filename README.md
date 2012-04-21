@@ -157,14 +157,14 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Javascript
 - SlimView
 - HighVoltage
+- Showcase (drones use this to demonstrate their working functionality)
+- Chosen, by harvestHQ
 - Cleanup
  
 
 ### Frozen drones (currently in development)
 
 - Bootstrap
-- Chosen
-- Cleanup
 - FactoryGirl
 - Git
 - Guard
@@ -176,7 +176,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 ### Future drones (TODO - I'll get there some day!)
 
 - Stylesheet utils
-- SlimViews: Add browser-specific classes to <html>
+- SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - UserAgent blocking script
 - Responders
 - HasScope
