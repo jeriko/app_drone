@@ -108,13 +108,13 @@ h1 Flair!
 
 h3 Bootstrap
 
-a.btn.btn-primary.btn-large Shiny!
-
-br
-a.btn.btn
-  i.icon-heart
-  | with Font Awesome!
-
+.btn-group
+  a.btn.btn-primary.btn-large Shiny!
+  
+  a.btn.btn-large
+    i.icon-heart
+    |  with Font Awesome!
+  
 
 h3 Chosen
 

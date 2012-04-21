@@ -238,7 +238,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - rails-best-practices (and the other output gem for debugging)
 - NewRelic
 - EngineYard for deployment
-
 - Backbone integration + Skim
 - Ember.js integration
 - Pivotal tracker
