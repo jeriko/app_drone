@@ -15,6 +15,8 @@ class AppDroneTest < Test::Unit::TestCase
     template.add :stylesheet
     template.add :slim_view
     template.add :high_voltage
+    template.add :showcase
+    template.add :chosen
     template.add :cleanup
     template.render_to_file
   end

@@ -1,8 +1,7 @@
-# Incomplete
 module AppDrone
 class SlimView < Drone
   desc "Sets up application.html.slim with shiny goodness"
-  # TODO param :options # header etc.
+  # TODO integration with rack useragent for browser-detection
 
   depends_on :bundle
 

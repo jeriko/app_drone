@@ -1,4 +1,4 @@
-# Incomplete
+# Complete!
 module AppDrone
 class Javascript < Drone
   desc "Generates application.js.coffee with manifest options and jQuery load hooks"
@@ -7,9 +7,6 @@ class Javascript < Drone
   def setup
     self.pipeline_requires = []
     self.on_readies = []
-
-    # TODO move this out into JQuery drone with UI option?
-    # TODO jquery-ui bundle or vendor
 
     self.pipeline 'jquery'
     self.pipeline 'jquery_ujs'

@@ -27,6 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
+@generator.gem 'chosen-rails'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -46,10 +47,12 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 @generator.create_file @coffee_asset_path, <<-COFFEE
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
 //= require_tree .
 
 $(document).ready ->
-  
+  $('.chzn-select').chosen();
+
 
 COFFEE
 
@@ -59,7 +62,9 @@ COFFEE
 @css_asset_path = File.join %w(app assets stylesheets application.css)
 @generator.remove_file(@css_asset_path)
 @sass_asset_path = File.join %w(app assets stylesheets application.css.sass)
+
 @generator.create_file @sass_asset_path, <<-SASS
+/*= require chosen */
 /*= require_self */
 
 @import 'compass'
@@ -89,6 +94,25 @@ SLIM
 # AppDrone::HighVoltage
 # ---
 FileUtils.mkpath 'app/views/pages'
+
+# --- 
+# AppDrone::Showcase
+# ---
+@generator.create_file 'app/views/pages/showcase.html.slim', <<-SHOWCASE
+h1 Showcase
+
+
+
+h3 Chosen
+
+select.chzn-select
+  option One
+  option Two
+  option Three
+
+
+
+SHOWCASE
 
 # --- 
 # AppDrone::Cleanup

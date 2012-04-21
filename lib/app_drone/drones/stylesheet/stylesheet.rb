@@ -1,4 +1,3 @@
-# Complete
 module AppDrone
 class Stylesheet < Drone
   desc "Generates application.css.sass with manifest options and imports"
@@ -15,7 +14,6 @@ class Stylesheet < Drone
 
   def align
     bundle.add 'therubyracer'
-    # TODO move compass out into its own drone?
     bundle.add 'compass-rails'
     self.import 'compass'
   end

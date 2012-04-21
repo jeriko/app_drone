@@ -1,4 +1,3 @@
-# Complete!
 module AppDrone
 class Cleanup < Drone
   desc "Removes some default Rails files that aren't very useful"
