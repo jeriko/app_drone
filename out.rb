@@ -70,7 +70,8 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
-@import 'compass_twitter_bootstrap'
+@import 'compass_twitter_bootstrap_awesome'
+@import 'compass_twitter_bootstrap_responsive'
 
 SASS
 
@@ -105,30 +106,22 @@ FileUtils.mkpath 'app/views/pages'
 h1 Flair!
 
 
-
 h3 Bootstrap
 
-# --- 
-# AppDrone::Bootstrap
-# ---
 a.btn.btn-primary.btn-large Shiny!
 
-
-
-
+br
+a.btn.btn
+  i.icon-heart
+  | with Font Awesome!
 
 
 h3 Chosen
 
-# --- 
-# AppDrone::Chosen
-# ---
 select.chzn-select
   option One
   option Two
   option Three
-
-
 
 FLAIR
 

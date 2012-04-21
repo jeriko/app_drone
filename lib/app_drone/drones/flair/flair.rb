@@ -19,10 +19,16 @@ class Flair < Drone
 
   def flair_for(drone_name)
     drone = send(drone_name)
-    return drone.render('flair.html.slim')
+    return drone.render 'flair.html.slim', skip_stamp: true
   end
 end
 
+
+# extend drones so they can call `flair!` rather than the verbose method
+# this pattern is useful for drones that take a single boolean parameter
+# e.g. 
+#   flair: do / don't flair, as opposed to
+#   bootstrap: vendor, responsive, font_awesome...
 class Drone
   def flair!
     flair.add(self) if pair?(:flair)

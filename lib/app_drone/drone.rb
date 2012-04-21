@@ -42,13 +42,13 @@ class Drone
   # Optional implementations
   def setup; end
 
-  def render(partial)
+  def render(partial, opts={})
     class_name = self.class.to_s.split('::').last.underscore
     template_path = "/drones/#{class_name}/#{partial}.erb"
     full_path = File.dirname(__FILE__) + template_path
     snippet = ERB.new File.read(full_path)
     output = snippet.result(binding)
-    output = "# --- \n# #{self.class.to_s}\n# ---\n" + output if true
+    output = "# --- \n# #{self.class.to_s}\n# ---\n" + output unless opts[:skip_stamp]
     return output
   end
 

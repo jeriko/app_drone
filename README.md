@@ -202,15 +202,16 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 ### Active drones (put 'em to work!)
 
 - Bundle
-- Stylesheet
-- Javascript
+- Stylesheet (Sass & Compass)
+- Javascript (Coffescript & jQuery)
 - SlimView
 - HighVoltage
-- Flair (drones use this to demonstrate their working functionality)
 - Chosen, by harvestHQ
 - Bootstrap, by Twitter
+- SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
+- Flair (drones use this to demonstrate their working functionality)
 - Cleanup
-- SimpleForm
+
 
 ### Frozen drones (currently in development)
 
