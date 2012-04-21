@@ -67,7 +67,7 @@ class Drone
       (@params ||= []) << Param.new(name, type, options.first)
     end
     def params
-      @params
+      (@params || [])
     end
 
     def desc(d='')
@@ -94,6 +94,10 @@ class Drone
 
     def to_sym
       self.to_s.split('::').last.underscore.to_sym
+    end
+
+    def human_name
+      self.to_sym.to_s.humanize.titleize
     end
 
   end
