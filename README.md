@@ -206,20 +206,19 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Javascript
 - SlimView
 - HighVoltage
-- Showcase (drones use this to demonstrate their working functionality)
+- Flair (drones use this to demonstrate their working functionality)
 - Chosen, by harvestHQ
+- Bootstrap, by Twitter
 - Cleanup
 - SimpleForm
 
 ### Frozen drones (currently in development)
 
-- Bootstrap
-- FactoryGirl
-- Git
-- Guard
 - RankedModel
+- Git
 - RSpec
-
+- FactoryGirl
+- Guard
 
 ### Future drones (TODO - I'll get there some day!)
 
@@ -229,17 +228,19 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Responders
 - HasScope
 - Pagination
-- CarrierWave (and optional cloud resizing thingy)
+- jQuery shims
+- jQuery UI (vendor + theme etc.)
+- pie.htc for IE
+- HTML5 shim for IE
 - Airbrake + API Key
+- CarrierWave (and optional cloud resizing thingy)
 - rails-best-practices (and the other output gem for debugging)
 - NewRelic
 - EngineYard for deployment
-- jQuery shims
+
 - Backbone integration + Skim
 - Ember.js integration
 - Pivotal tracker
-- pie.htc for IE
-- HTML5 shim for IE
 
 
 ## Contributing

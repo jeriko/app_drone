@@ -28,6 +28,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
 @generator.gem 'simple_form'
+@generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
 @generator.gem 'chosen-rails'
 
 run_bundle
@@ -69,6 +70,7 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
+@import 'compass_twitter_bootstrap'
 
 SASS
 
@@ -104,8 +106,23 @@ h1 Flair!
 
 
 
+h3 Bootstrap
+
+# --- 
+# AppDrone::Bootstrap
+# ---
+a.btn.btn-primary.btn-large Shiny!
+
+
+
+
+
+
 h3 Chosen
 
+# --- 
+# AppDrone::Chosen
+# ---
 select.chzn-select
   option One
   option Two
@@ -118,7 +135,7 @@ FLAIR
 # --- 
 # AppDrone::SimpleForm
 # ---
-generate "simple_form:install"
+generate "simple_form:install --bootstrap"
 
 # --- 
 # AppDrone::Cleanup

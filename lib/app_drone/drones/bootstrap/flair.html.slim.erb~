@@ -1,0 +1,8 @@
+a.btn.btn-primary.btn-large Shiny!
+<%= @params %>
+<% if param(:font_awesome) %>
+br
+a.btn.btn
+  i.icon-heart
+  | with Font Awesome!
+<% end %>

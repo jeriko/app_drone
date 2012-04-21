@@ -3,7 +3,7 @@ h1 Flair!
 
 <% flairs.each do |drone_name| %>
 
-h3 <%= drone_name.humanize.titleize %>
+h3 <%= drone_name.to_s.humanize.titleize %>
 
 <%= flair_for(drone_name) %>
 

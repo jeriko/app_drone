@@ -10,7 +10,7 @@ class Flair < Drone
   end
 
   def add(klass)
-    flairs << klass.class.to_s.gsub('AppDrone::','').underscore
+    flairs << klass.class.to_s.gsub('AppDrone::','').underscore.to_sym
   end
 
   def execute
@@ -18,15 +18,17 @@ class Flair < Drone
   end
 
   def flair_for(drone_name)
-    flair_path = File.join File.dirname(__FILE__), '..', drone_name, 'flair.html.slim'
+    drone = send(drone_name)
+    drone.render('flair.html.slim')
+    flair_path = File.join File.dirname(__FILE__), '..', drone_name.to_s, 'flair.html.slim.erb'
     snippet = ERB.new File.read(flair_path)
-    return snippet.result(binding)
+    return snippet.result(drone.send(:binding))
   end
 end
 
 class Drone
   def flair!
-    flair.add(self)
+    flair.add(self) if pair?(:flair)
   end
 end
 
