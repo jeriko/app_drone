@@ -1,4 +1,3 @@
-# Complete!
 module AppDrone
 class Bundle < Drone
   desc "Manages gem installations"

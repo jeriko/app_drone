@@ -2,6 +2,7 @@ module AppDrone
 class Flair < Drone
   desc "Creates a page to demonstrate the drones' hard work"
   depends_on :high_voltage, :slim_view
+  category :pages
 
   attr_accessor :flairs
 
@@ -10,7 +11,7 @@ class Flair < Drone
   end
 
   def add(klass)
-    flairs << klass.class.to_s.gsub('AppDrone::','').underscore.to_sym
+    flairs << klass.class.to_sym
   end
 
   def execute
@@ -19,7 +20,7 @@ class Flair < Drone
 
   def flair_for(drone_name)
     drone = send(drone_name)
-    return drone.render 'flair.html.slim', stamp: true
+    return drone.render 'flair.html.slim', skip_stamp: true
   end
 end
 

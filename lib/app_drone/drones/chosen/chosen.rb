@@ -1,6 +1,7 @@
 module AppDrone
 class Chosen < Drone
   desc 'Installs the Chosen plugin by HarvestHQ'
+  category :ui
   depends_on :bundle, :stylesheet, :javascript
   pairs_with :flair
 

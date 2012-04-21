@@ -1,4 +1,3 @@
-# Complete
 module AppDrone
 class Stylesheet < Drone
   desc "Generates application.css.sass with manifest options and imports"

@@ -1,6 +1,7 @@
 module AppDrone
 class Stylesheet < Drone
   desc "Generates application.css.sass with manifest options and imports"
+  category :base
   depends_on :bundle
 
   attr_accessor :pipeline_requires, :imports

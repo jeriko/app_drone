@@ -70,13 +70,13 @@ class Drone
       (@params || [])
     end
 
-    def desc(d='')
-      return @description if d.blank?
+    def desc(d=nil)
+      return @description if d.nil?
       @description = d
     end
 
-    def category(c='')
-      return @category if c.blank?
+    def category(c=nil)
+      return @category if c.nil?
       @category = c
     end
 

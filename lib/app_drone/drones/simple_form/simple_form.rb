@@ -2,6 +2,7 @@
 module AppDrone
 class SimpleForm < Drone
   desc "Installs SimpleForm, with optional Country Select and automatic Twitter Bootstrap integration"
+  category :pages
 
   depends_on :bundle
   pairs_with :bootstrap

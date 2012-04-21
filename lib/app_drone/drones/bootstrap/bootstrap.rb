@@ -2,6 +2,7 @@
 module AppDrone
 class Bootstrap < Drone
   desc "Installs Twitter Bootstrap stylesheets and javascripts"
+  category :ui
 
   param :vendor, :boolean, info: 'place a local copy of the files into the repo for customization'
   param :responsive, :boolean, info: 'include responsive grid'

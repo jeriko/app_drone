@@ -1,6 +1,7 @@
 module AppDrone
 class Bundle < Drone
   desc "Manages gem installations"
+  category :base
   owns_generator_method :gemfile
 
   attr_accessor :gems
