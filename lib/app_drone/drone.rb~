@@ -13,17 +13,26 @@ class Drone
     setup
   end
 
+  def param(sym)
+    (@params || {})[sym]
+  end
+
   # DSL
-  def ^; @template end
+  def ^; @template end # This is never used, not even sure if it works (something about a misplaced '.' error)
   def >>(klass); @template.hook(klass); end
 
   def method_missing(meth, *args, &block)
     if Drone.drones.include?(meth)
-      klass = ('AppDrone::' + meth.to_s.classify).constantize
+      klass = meth.to_app_drone_class
       return (self >> klass)
     else
       super
     end
+  end
+
+  def pair?(drone_symbol)
+    drone_klass = ('AppDrone::' + drone_symbol.to_s.classify).constantize
+    return @template.hook?(drone_klass)
   end
 
   # Expected implementations
@@ -50,8 +59,12 @@ class Drone
   # DSL: Integration-specific options
   attr_accessor :params
   class << self  
+    def param_with(drone_klass, name, type, *options)
+      param(name,type,options.first.merge({ with: drone_klass }))
+    end
+
     def param(name, type, *options)
-      (@params ||= []) << Param.new(name, type, options)
+      (@params ||= []) << Param.new(name, type, options.first)
     end
     def params
       @params
@@ -64,7 +77,12 @@ class Drone
 
     def depends_on(*klass_symbols); @dependencies = klass_symbols end
     def dependencies
-      (@dependencies || []).map { |k| ('AppDrone::' + k.to_s.classify).constantize }
+      (@dependencies || []).map(&:to_app_drone_class)
+    end
+
+    def pairs_with(*klass_symbols); @pairs = klass_symbols end
+    def pairs
+      (@pairs || []).map(&:to_app_drone_class)
     end
 
     def owns_generator_method(m); @generator_method = m end

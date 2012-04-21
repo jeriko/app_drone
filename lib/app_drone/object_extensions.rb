@@ -9,3 +9,9 @@ class String
     self == ''
   end
 end
+
+class Symbol
+  def to_app_drone_class
+    ('AppDrone::' + self.to_s.classify).constantize
+  end
+end

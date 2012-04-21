@@ -8,7 +8,7 @@ class AppDrone::Template
 
   def drone_objects; @drones.values end
   def drone_classes; @drones.keys end
-  def hook?(klass); @drones[klass].nil? end
+  def hook?(klass); !@drones[klass].nil? end
   def hook(klass)
     raise "No such drone: #{klass}" unless i_klass = @drones[klass]
     return i_klass

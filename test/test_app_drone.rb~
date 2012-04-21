@@ -23,6 +23,8 @@ class AppDroneTest < Test::Unit::TestCase
     template.add :slim_view
     template.add :high_voltage
     template.add :flair
+    template.add :simple_form
+    template.add :bootstrap
     template.add :chosen
     template.add :cleanup
     template.render_to_file

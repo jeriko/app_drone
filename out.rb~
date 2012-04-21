@@ -27,7 +27,6 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'simple_form'
 @generator.gem 'chosen-rails'
 
 run_bundle
@@ -114,11 +113,6 @@ select.chzn-select
 
 
 FLAIR
-
-# --- 
-# AppDrone::SimpleForm
-# ---
-generate "simple_form:install"
 
 # --- 
 # AppDrone::Cleanup
