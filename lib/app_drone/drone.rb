@@ -89,7 +89,11 @@ class Drone
     def generator_method; @generator_method end
 
     def drones
-      self.descendants.map { |d| d.to_s.split('::').last.underscore.to_sym }
+      self.descendants.map(&:to_sym)
+    end
+
+    def to_sym
+      self.to_s.split('::').last.underscore.to_sym
     end
 
   end

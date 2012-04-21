@@ -30,6 +30,16 @@ class AppDroneTest < Test::Unit::TestCase
     template.render_to_file
   end
 
+  def test_drone_class_to_symbol
+    drone_class = AppDrone::Bundle
+    assert_equal drone_class.to_sym, :bundle
+  end
+
+  def test_symbol_to_drone_class
+    drone_symbol = :bundle
+    assert_equal drone_symbol.to_app_drone_class, AppDrone::Bundle
+  end
+
 end
 
 end
