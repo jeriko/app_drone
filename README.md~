@@ -87,10 +87,11 @@ Optionally, a `setup` method can be defined to set up variables etc. when a dron
 
 ### Describing a drone
 
-You can use `desc` in the class declaration to explain what the drone does (mostly for shiny UI purposes)
+Use `desc` in the class declaration to explain what the drone does, and `category` to group similar drones together. This is mostly for shiny UI purposes (app_drone_app).
 
     class AppDrone::MyDrone < AppDrone::Drone
       desc 'Kills all humans.'
+      category :deathbots
     end
 
 

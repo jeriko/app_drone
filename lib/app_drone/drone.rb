@@ -75,10 +75,16 @@ class Drone
       @description = d
     end
 
+    def category(c='')
+      return @category if c.blank?
+      @category = c
+    end
+
     def depends_on(*klass_symbols); @dependencies = klass_symbols end
     def dependencies
       (@dependencies || []).map(&:to_app_drone_class)
     end
+
 
     def pairs_with(*klass_symbols); @pairs = klass_symbols end
     def pairs
