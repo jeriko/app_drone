@@ -20,7 +20,7 @@ class AppDroneTest < Test::Unit::TestCase
     add_defaults_to_template(template)
 
     template.add :simple_form
-    template.add :bootstrap, responsive: true
+    template.add :bootstrap, responsive: true, javascript_plugins: %w(modal transition)
     template.add :chosen
     template.add :ember, app_skeleton: true
 

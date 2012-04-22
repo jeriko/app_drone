@@ -7,8 +7,7 @@ class Bootstrap < Drone
   param :vendor, :boolean, info: 'place a local copy of the files into the repo for customization'
   param :responsive, :boolean, info: 'include responsive grid'
   param :font_awesome, :boolean, info: 'use font-awesome for icons', default: true
-
-  # TODO js import options
+  param :javascript_plugins, :choose_many, info: 'require javascript plugin files', default: [], choices: %w(modal dropdown scrollspy tab tooltip popover alert button collapse carousel typeahead)
 
   depends_on :bundle, :stylesheet, :javascript
 
@@ -25,13 +24,13 @@ class Bootstrap < Drone
  private
   def align_vendor
     # TODO import paths for stylesheet (different to bundle)
-    # TODO js imports - based on options
+    param(:javascript_plugins).each { |p| javascript.pipeline "bootstrap-#{p}" }
   end
 
   def align_bundle
     stylesheet.import param(:font_awesome) ? 'compass_twitter_bootstrap_awesome' : 'compass_twitter_bootstrap'
     stylesheet.import 'compass_twitter_bootstrap_responsive' if param(:responsive)
-    # TODO js imports - based on options
+    param(:javascript_plugins).each { |p| javascript.pipeline "bootstrap-#{p}" }
   end
 
   def execute_vendor
@@ -39,7 +38,7 @@ class Bootstrap < Drone
   end
 
   def execute_bundle
-    # TODO nothing
   end
+
 end
 end
