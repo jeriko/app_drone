@@ -189,7 +189,43 @@ For convenience, `method_missing` is used to allow you to use the underscore'd n
       end
     end
 
-**Take a look at existing drones for more info!**
+
+## DependencyChain
+
+The `DependencyChain` class is used to test if a collection of drones is self-sufficient.
+
+    DependencyChain.satisfied? [AppDrone::Bundle, AppDrone::Stylesheet]
+    # => true
+
+    DependencyChain.satisfied? [AppDrone::Bundle, AppDrone::Flair]
+    # => false
+
+    DependencyChain.satisfaction_requirements [AppDrone::Bundle, AppDrone::Flair]
+    # => [AppDrone::HighVoltage, AppDrone::SlimView]
+
+Note that only immediate requirements are output. Consider, if `A` depends on `B`, and `B` depends on `C`:
+
+    DependencyChain.satisfaction_requirements ['A']
+    # => ['B']
+
+    DependencyChain.satisfied? ['A','B']
+    # => false
+
+    DependencyChain.satisfaction_requirements ['A','B']
+    # => ['C']
+
+    DependencyChain.satisfied? ['A','B','C']
+    # => true
+
+You can also sort a collection of drones so that each drone appears after its respective dependencies:
+
+    DependencyChain.sort [AppDrone::Flair, AppDrone::HighVoltage, AppDrone::Bundle, AppDrone::SlimView]
+    # => [AppDrone::Bundle, AppDrone::HighVoltage, AppDrone::SlimView, AppDrone::Flair]
+
+
+### More info
+
+**Take a look at existing drones to gain a deeper understanding of how they work**
 
 
 ### Drone naming caveat

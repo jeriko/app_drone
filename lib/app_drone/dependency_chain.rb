@@ -13,11 +13,13 @@ class DependencyChain
       return all_dependencies - drones
     end
 
+    def check_dependencies!(drones)
+      raise "Unsatisfied dependencies: #{satisfaction_requirements(drones)}" unless satisfied?(drones)
+    end
 
     def sort(drones)
       raise ArgumentError unless drones.is_a?(Array)
-
-      raise "Unsatisfied dependencies: #{satisfaction_requirements(drones)}" unless satisfied?(drones)
+      check_dependencies!(drones)
 
       misplaced_drone = drones.reverse.find do |drone|
         # working from the bottom of the list upwards,

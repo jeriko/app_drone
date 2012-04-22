@@ -3,7 +3,7 @@ require 'erb'
 require 'active_support/inflector'
 
 # require lib files
-lib_files = %w(version template drone dependency_chain object_extensions)
+lib_files = %w(version dependency_chain template drone object_extensions)
 lib_files.each { |f| require "app_drone/#{f}" }
 
 # require all drones in app_drone/drones, exclude 'zzz' folder
@@ -13,5 +13,4 @@ drones -= ['zzz']
 drones.each { |d| require "app_drone/drones/#{d}/#{d}" }
 
 module AppDrone
-  # TODO Your code goes here...
 end

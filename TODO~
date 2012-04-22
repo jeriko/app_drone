@@ -1,6 +1,4 @@
 ** templates must be added and run in the order that satisfies dependency order best. (also consider pairings if possible)
 i.e. a drone can only run after it's dependants have had their turn (unless they mutually depend)
 
-** param 'default' values... (when accessing param, if nil, return default (unless default is nil too))
-
 ** rename pairs/pairs_with to connections/connects_with

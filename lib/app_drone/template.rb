@@ -1,4 +1,5 @@
-class AppDrone::Template
+module AppDrone
+class Template
   def initialize; @drones = {}; @directives = {} end
 
   def add(ref,*params)
@@ -22,18 +23,9 @@ class AppDrone::Template
     (@directives[generator_method] ||= []) << d
   end
   
-  def check_dependencies
-    drone_classes.each { |drone_class|
-      drone_class.dependencies.each { |d|
-        dependency = d.to_s.classify
-        raise "#{drone_class} depends on #{dependency}, but it is not included in the template." unless drone_classes.include?(d)
-      }
-    }
-  end
-
   def render!
     return if @rendered
-    check_dependencies
+    DependencyChain.check_dependencies!(drone_classes)
     drone_objects.map(&:align)
     drone_objects.map(&:execute)
     @rendered = true
@@ -58,5 +50,5 @@ class AppDrone::Template
       f.write(render_with_wrapper)
     end
   end
-  
+end
 end
