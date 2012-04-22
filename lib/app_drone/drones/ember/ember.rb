@@ -1,8 +1,8 @@
 module AppDrone
 class Ember < Drone
   desc 'Installs ember.js for Rails'
+  category :ux
   depends_on :bundle, :javascript
-
   param :app_skeleton, :boolean, info: 'build an Ember app skeleton'
 
   def align

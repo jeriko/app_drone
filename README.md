@@ -119,7 +119,7 @@ Pairing is weaker than a dependency. A template will not render without its depe
       def align
         bobby_davis_jr.say 'Hi'
         bobby_davis_jr.introduce 'This is Celine Dion' if pair?(:celine_dion)
-        self.get_changed if param(:wear_human_suit_over_mechaskin)
+        self.visit_changing_room if param(:wear_human_suit_over_mechaskin)
       end
 
       def execute
@@ -138,7 +138,7 @@ Pairing is weaker than a dependency. A template will not render without its depe
     end
     
     AppDrone::MyDrone.params
-    # => [#<struct Struct::Param name=:lazer_color, type=:string, options=[{:rainbow=>["all","teh","colors!"]}]>]
+    # => [#<struct Struct::Param name=:lazer_color, type=:string, options={:rainbow=>["all","teh","colors!"]}>]
     
     t = AppDrone::Template.new
     t.add :my_drone, lazer_color: 'teh'
@@ -236,6 +236,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - UserAgent blocking script
 - Responders
+- Bootstrap: vendor files rather than gem require
 - EasyRoles
 - Migrant
 - HasScope

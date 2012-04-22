@@ -86,7 +86,6 @@ class Drone
       (@dependencies || []).map(&:to_app_drone_class)
     end
 
-
     def pairs_with(*klass_symbols); @pairs = klass_symbols end
     def pairs
       (@pairs || []).map(&:to_app_drone_class)
@@ -97,6 +96,10 @@ class Drone
 
     def drones
       self.descendants.map(&:to_sym)
+    end
+
+    def categories
+      self.descendants.map(&:category).uniq
     end
 
     def to_sym
