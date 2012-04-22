@@ -10,6 +10,7 @@ class Bootstrap < Drone
   param :javascript_plugins, :choose_many, info: 'pipeline javascript plugin files', default: [], choices: %w(modal dropdown scrollspy tab tooltip popover alert button collapse carousel typeahead)
 
   depends_on :bundle, :stylesheet, :javascript
+  pairs_with :flair
 
   def align
     bundle.add 'compass_twitter_bootstrap', git: 'git://github.com/vwall/compass-twitter-bootstrap.git', group: :assets

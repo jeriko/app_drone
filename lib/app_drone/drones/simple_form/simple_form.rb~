@@ -9,7 +9,6 @@ class SimpleForm < Drone
 
   param :add_country_select, :boolean, info: 'Add country_select for listing countries', default: true
 
-
   def align
     bundle.add 'simple_form'
     bundle.add 'country_select' if param(:add_country_select)

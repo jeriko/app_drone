@@ -4,6 +4,8 @@ class Javascript < Drone
   category :base
   attr_accessor :pipeline_requires, :on_readies
 
+  depends_on :bundle # not really, but makes for good ordering in DependencyChain
+
   def setup
     self.pipeline_requires = []
     self.on_readies = []

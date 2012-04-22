@@ -122,7 +122,7 @@ h3 Bootstrap
   a.btn.btn-primary.btn-large Shiny!
   
   a.btn.btn-large
-    i.icon-heart
+    i.icon-thumbs-up
     |  with Font Awesome!
   
 
