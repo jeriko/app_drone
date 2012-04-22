@@ -30,6 +30,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'simple_form'
 @generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
 @generator.gem 'chosen-rails'
+@generator.gem 'ember-rails'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -49,9 +50,15 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 @generator.create_file @coffee_asset_path, <<-COFFEE
 //= require jquery
 //= require jquery_ujs
+//= require init
 //= require chosen-jquery
-//= require_tree .
+//= require ember
+//= require ember/#{app_name}.js
 
+COFFEE
+
+@coffee_init_path = File.join %w(app assets javascripts init.js.coffee)
+@generator.create_file @coffee_init_path, <<-COFFEE
 $(document).ready ->
   $('.chzn-select').chosen();
 
@@ -129,6 +136,13 @@ FLAIR
 # AppDrone::SimpleForm
 # ---
 generate "simple_form:install --bootstrap"
+
+# --- 
+# AppDrone::Ember
+# ---
+
+generate "ember:bootstrap"
+
 
 # --- 
 # AppDrone::Cleanup

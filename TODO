@@ -2,3 +2,5 @@
 i.e. a drone can only run after it's dependants have had their turn (unless they mutually depend)
 
 ** param 'default' values... (when accessing param, if nil, return default (unless default is nil too))
+
+** move application.js.coffee onreadies into init.js.coffee and require it

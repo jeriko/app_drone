@@ -26,7 +26,7 @@ class AppDroneTest < Test::Unit::TestCase
     template.add :simple_form
     template.add :bootstrap, font_awesome: true, responsive: true
     template.add :chosen
-    template.add :ember_js, app_skeleton: true
+    template.add :ember, app_skeleton: true
     template.add :cleanup
     template.render_to_file
   end

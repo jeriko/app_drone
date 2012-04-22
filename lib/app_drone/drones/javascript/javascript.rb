@@ -10,6 +10,7 @@ class Javascript < Drone
 
     self.pipeline 'jquery'
     self.pipeline 'jquery_ujs'
+    self.pipeline 'init'
   end
 
   def pipeline(r); self.pipeline_requires << r end

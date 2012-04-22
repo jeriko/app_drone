@@ -192,6 +192,12 @@ For convenience, `method_missing` is used to allow you to use the underscore'd n
 **Take a look at existing drones for more info!**
 
 
+### Drone naming caveat
+
+Because `ActiveSupport::Inflector` is used, be careful when naming drones with apparent plurals - `AppDrone::EmberJs` would be incorrectly symbolized to `ember_j`.
+
+    
+
 ### An important reminder
 
 AppDrone is not for everyone. It's highly opinionated about how a Rails app should be laid out, but is the fruit of tons of research into best practices and maintainability. AppDrone leans especially heavily on Sass, Compass, Coffeescript and Slim. Buyer beware.
@@ -207,6 +213,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - Javascript (Coffescript & jQuery)
 - SlimView
 - HighVoltage
+- Ember (the Ember.js library)
 - Chosen, by harvestHQ
 - Bootstrap, by Twitter
 - SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
@@ -240,7 +247,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - NewRelic
 - EngineYard for deployment
 - Backbone integration + Skim
-- Ember.js integration
 - Pivotal tracker
 
 

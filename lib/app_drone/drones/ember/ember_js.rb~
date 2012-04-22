@@ -7,7 +7,10 @@ class EmberJs < Drone
 
   def align
     bundle.add 'ember-rails'
-    javascript.pipeline_require 'ember'
+    javascript.pipeline 'ember'
+    if param(:app_skeleton)
+      javascript.pipeline 'ember/\#{app_name}.js'
+    end
   end
 
   def execute

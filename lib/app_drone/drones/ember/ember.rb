@@ -1,5 +1,5 @@
 module AppDrone
-class EmberJs < Drone
+class Ember < Drone
   desc 'Installs ember.js for Rails'
   depends_on :bundle, :javascript
 
@@ -7,9 +7,10 @@ class EmberJs < Drone
 
   def align
     bundle.add 'ember-rails'
-    javascript.pipeline_require 'ember'
-    # TODO - rails g ember:bootstrap adds pipeline itself to 'application.js'
-    # it just doesn't understand the .coffee part - perhaps move onreadies into their own coffeescript?
+    javascript.pipeline 'ember'
+    if param(:app_skeleton)
+      javascript.pipeline 'ember/#{app_name}.js'
+    end
   end
 
   def execute

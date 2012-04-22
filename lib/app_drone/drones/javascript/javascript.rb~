@@ -1,6 +1,7 @@
 module AppDrone
 class Javascript < Drone
   desc "Generates application.js.coffee with manifest options and jQuery load hooks"
+  category :base
   attr_accessor :pipeline_requires, :on_readies
 
   def setup
@@ -9,6 +10,7 @@ class Javascript < Drone
 
     self.pipeline 'jquery'
     self.pipeline 'jquery_ujs'
+    self.pipeline 'init'
   end
 
   def pipeline(r); self.pipeline_requires << r end
