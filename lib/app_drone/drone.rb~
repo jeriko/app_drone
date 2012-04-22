@@ -9,12 +9,14 @@ class Drone
   # New
   def initialize(template,*params)
     @template = template
-    @params = params.first # weird.. no idea why
+    @params = (params.first || {}).merge({options: {}})
     setup
   end
 
   def param(sym)
-    (@params || {})[sym]
+    param_value = @params[sym]
+    default_value = self.class.param_named(sym).options[:default]
+    return param_value || default_value
   end
 
   # DSL
@@ -66,9 +68,8 @@ class Drone
     def param(name, type, *options)
       (@params ||= []) << Param.new(name, type, options.first)
     end
-    def params
-      (@params || [])
-    end
+    def params; @params || [] end
+    def param_named(n); params.find { |p| p.name == n } end
 
     def desc(d=nil)
       return @description if d.nil?

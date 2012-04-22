@@ -7,7 +7,8 @@ class SimpleForm < Drone
   depends_on :bundle
   pairs_with :bootstrap
 
-  param :add_country_select, :boolean, info: 'Add country_select for listing countries'
+  param :add_country_select, :boolean, info: 'Add country_select for listing countries', default: true
+
 
   def align
     bundle.add 'simple_form'

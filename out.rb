@@ -28,6 +28,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
 @generator.gem 'simple_form'
+@generator.gem 'country_select'
 @generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
 @generator.gem 'chosen-rails'
 @generator.gem 'ember-rails'
@@ -133,6 +134,13 @@ select.chzn-select
 FLAIR
 
 # --- 
+# AppDrone::Cleanup
+# ---
+@generator.remove_file File.join %w(public index.html)
+@generator.remove_file File.join %w(app assets images rails.png)
+@generator.remove_file File.join %w(README.rdoc)
+
+# --- 
 # AppDrone::SimpleForm
 # ---
 generate "simple_form:install --bootstrap"
@@ -143,13 +151,6 @@ generate "simple_form:install --bootstrap"
 
 generate "ember:bootstrap"
 
-
-# --- 
-# AppDrone::Cleanup
-# ---
-@generator.remove_file File.join %w(public index.html)
-@generator.remove_file File.join %w(app assets images rails.png)
-@generator.remove_file File.join %w(README.rdoc)
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green

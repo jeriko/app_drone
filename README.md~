@@ -235,6 +235,8 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - UserAgent blocking script
 - Responders
+- EasyRoles
+- Migrant
 - HasScope
 - Pagination
 - jQuery shims

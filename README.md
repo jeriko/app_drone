@@ -231,10 +231,13 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 ### Future drones (TODO - I'll get there some day!)
 
+- Database (currenly rake db:migrate in template will break non-sqlite dbs)
 - Stylesheet utils
 - SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - UserAgent blocking script
 - Responders
+- EasyRoles
+- Migrant
 - HasScope
 - Pagination
 - jQuery shims

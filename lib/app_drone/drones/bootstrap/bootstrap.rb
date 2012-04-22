@@ -6,7 +6,7 @@ class Bootstrap < Drone
 
   param :vendor, :boolean, info: 'place a local copy of the files into the repo for customization'
   param :responsive, :boolean, info: 'include responsive grid'
-  param :font_awesome, :boolean, info: 'use font-awesome for icons'
+  param :font_awesome, :boolean, info: 'use font-awesome for icons', default: true
 
   # TODO js import options
 
