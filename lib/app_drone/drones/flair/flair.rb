@@ -2,7 +2,7 @@ module AppDrone
 class Flair < Drone
   desc "Creates a page to demonstrate the drones' hard work"
   depends_on :high_voltage, :slim_view
-  category :pages
+  category :base
 
   attr_accessor :flairs
 

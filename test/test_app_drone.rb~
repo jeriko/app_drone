@@ -15,8 +15,8 @@ class AppDroneTest < Test::Unit::TestCase
   def setup
   end
 
-  def test_blah
-    puts    DependencyChain.sort [AppDrone::Flair, AppDrone::HighVoltage, AppDrone::Bundle, AppDrone::SlimView]
+  def test_dependants
+    puts AppDrone::Bundle.dependants
   end
 
   def test_basic_behavior

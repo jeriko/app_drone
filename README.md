@@ -244,50 +244,79 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 ### Active drones (put 'em to work!)
 
-- Bundle
-- Stylesheet (Sass & Compass)
-- Javascript (Coffescript & jQuery)
-- SlimView
-- HighVoltage
-- Ember (the Ember.js library)
-- Chosen, by harvestHQ
-- Bootstrap, by Twitter
-- SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
-- Flair (drones use this to demonstrate their working functionality)
-- Cleanup
+- [base] Bundle
+- [base] Stylesheet (Sass & Compass)
+- [base] Javascript (Coffescript & jQuery)
+- [base] SlimView
+- [base] Cleanup
+- [views] HighVoltage
+- [views] Flair (drones use this to demonstrate their working functionality)
+- [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
+- [ui] Chosen, by harvestHQ
+- [ui] Bootstrap, by Twitter
+- [ux] Ember (the Ember.js library)
 
 
 ### Frozen drones (currently in development)
 
-- RankedModel
-- Git
-- RSpec
-- FactoryGirl
-- Guard
+- [base] Database (currenly rake db:migrate in template will break non-sqlite dbs)
+- [auth] CanCan
+- [auth] Sorcery
+- [auth] Devise
+- [auth] EasyRoles
+- [test] RSpec
+- [test] FactoryGirl
+- [test] DatabaseCleaner
+- [test] TimeCop
+- [test] Capybara
+- [test] Shoulda
+- [test?] Chronic
+- [dev] Migrant (+ Pickle support?)
+- [dev] Guard
+- [source-control] Git
+- [model] RankedModel
+- [model] Squeel
+- [requests] Responders
+- [requests] InheritedResources (deprecated)
+- [requests] UserAgent blocking script
+- [dev] Letter opener
+- [ui] Underscore Rails
+- [mailing] SendGrid
 
 ### Future drones (TODO - I'll get there some day!)
 
-- Database (currenly rake db:migrate in template will break non-sqlite dbs)
-- Stylesheet utils
-- SlimViews: Add browser-specific classes to <html> via useragent + helpers..
-- UserAgent blocking script
-- Responders
-- Bootstrap: vendor files rather than gem require
-- EasyRoles
-- Migrant
-- HasScope
-- Pagination
-- jQuery shims
-- jQuery UI (vendor + theme etc.)
-- pie.htc for IE
-- HTML5 shim for IE
-- Airbrake + API Key
-- CarrierWave (and optional cloud resizing thingy)
-- rails-best-practices (and the other output gem for debugging)
-- NewRelic
-- EngineYard for deployment
-- Backbone integration + Skim
-- Pivotal tracker
+- [ui] Stylesheet utils
+- [ui] SlimViews: Add browser-specific classes to <html> via useragent + helpers..
+- [ui] Bootstrap: vendor files rather than gem require
+- [ui] jQuery shims
+- [ui] jQuery UI (vendor + theme etc.)
+- [ui] pie.htc for IE
+- [ui] HTML5 shim for IE
+- [uploads] CarrierWave (and optional cloud resizing thingy)
+- [uploads] Fog
+- [uploads] Remotipart
+- [uploads?] RMagick / minimagick
+- [requests] HasScope
+- [requests] will-paginate (+bootstrap-will-paginate)
+- [dev] rails-best-practices (and the other output gem for debugging)
+- [dev] Pivotal tracker
+- [dev] RailsErd
+- [production] Airbrake + API Key
+- [production] NewRelic
+- [production] EngineYard for deployment
+- [ux] Backbone integration + Skim
+- [views] Nested Form
+- [?] SeedFu
+- [?] Launchy
+- [?] Growl & rb-notify etc.
+- [views] ShowFor
+- [views?] RedCarpet
+- [?] Nokogiri
+- [?] Mechanize
+- [?] Money
+- [ui] jQuery.transit
+- [ui] Ember Touch (gesture support for Ember: pinch, pan etc.)
+
 
 
 ## Contributing

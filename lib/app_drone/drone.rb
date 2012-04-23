@@ -86,6 +86,10 @@ class Drone
       (@dependencies || []).map(&:to_app_drone_class)
     end
 
+    def dependants
+      self.superclass.drones.select { |d| d.to_app_drone_class.dependencies.include?(self) }.map(&:to_app_drone_class)
+    end
+
     def pairs_with(*klass_symbols); @pairs = klass_symbols end
     def pairs
       (@pairs || []).map(&:to_app_drone_class)

@@ -15,6 +15,10 @@ class AppDroneTest < Test::Unit::TestCase
   def setup
   end
 
+  def test_dependants
+    puts AppDrone::Bundle.dependants
+  end
+
   def test_basic_behavior
     template = Template.new
     add_defaults_to_template(template)
