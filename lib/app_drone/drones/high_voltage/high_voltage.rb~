@@ -1,7 +1,7 @@
 module AppDrone
 class HighVoltage < Drone
   desc "DANGER! Super-simple static webpages"
-  category :pages
+  category :base
   depends_on :bundle
 
   def align
