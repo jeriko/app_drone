@@ -1,5 +1,5 @@
 module AppDrone
-class Responder < Drone
+class Responderz < Drone
   desc "DRY up your controllers"
   category :requests
 

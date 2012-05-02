@@ -1,5 +1,5 @@
 module AppDrone
-class EasyRoles45 < Drone
+class EasyRolez < Drone
   desc "Add roles to your User models"
   category :auth
  

@@ -3,7 +3,6 @@
 ** Will paginate bootstrap flair?
 
 - [views] Nested Form
-- [misc] NiftyGenerators
 
 - [test] RSpec
 - [test] FactoryGirl
@@ -13,6 +12,7 @@
 - [test] Shoulda
 
 - [mailing] SendGrid
+- [mailing] Postmark
 - [uploads] CarrierWave (and optional cloud resizing thingy)
 - [uploads] Fog
 - [uploads] Remotipart
@@ -23,11 +23,14 @@
 - [ui] pie.htc for IE
 - [ui] HTML5 shim for IE
 
+Resque
+Redis
+DelayedJob
+
+DELAY:
 - [dev] rails-best-practices (and the other output gem for debugging)
 - [dev] RailsErd
-
 - [production] Airbrake + API Key
-
 - [?] Launchy
 - [base] Database: rake [db:create, db:migrate] at very end of generator, options? postgres etc. (will need a dropdown option in the app for this)
 - [auth] Devise
