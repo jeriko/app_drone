@@ -1,0 +1,8 @@
+button#gritterTrigger Growl for me, baby!
+
+javascript:
+  $(function() {
+    $('#gritterTrigger').click(function() {
+      $.gritter.add({ title: 'Grrrrrr!!!', text: 'Like that? :P', time: 2000, position: 'top-left' });
+    });
+  });

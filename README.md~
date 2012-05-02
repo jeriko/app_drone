@@ -249,10 +249,11 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [base] Javascript (Coffescript & jQuery)
 - [base] SlimView
 - [base] Cleanup
-- [views] HighVoltage
+- [views] HighVoltage, by ThoughtBot
 - [views] Flair (drones use this to demonstrate their working functionality)
 - [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
-- [ui] Chosen, by harvestHQ
+- [auth] Sorcery, for stripped down user authentication
+- [ui] Chosen select, by harvestHQ
 - [ui] Bootstrap, by Twitter
 - [ui] Gritter, for jQuery growl-like notifications
 - [ux] Ember (the Ember.js library)
@@ -288,7 +289,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 - [ui] Stylesheet utils
 - [ui] SlimViews: Add browser-specific classes to <html> via useragent + helpers..
-- [ui] Bootstrap: vendor files rather than gem require
+- [ui] Bootstrap: vendor files rather than gem require (is this necessary? seems all variables can be customized in an external sheet as long as it's required before compass_twitter_bootstrap)
 - [ui] jQuery shims
 - [ui] jQuery UI (vendor + theme etc.)
 - [ui] pie.htc for IE
@@ -315,6 +316,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [?] Nokogiri
 - [?] Mechanize
 - [?] Money
+- [misc] NiftyGenerators
 - [ui] jQuery.transit
 - [ui] Ember Touch (gesture support for Ember: pinch, pan etc.)
 

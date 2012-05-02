@@ -112,13 +112,9 @@ button#gritterTrigger Growl for me, baby!
 javascript:
   $(function() {
     $('#gritterTrigger').click(function() {
-      $.gritter.add({
-	title: 'Grrrrrrrr!!',
-	text: 'Like that? :P'
-      });
+      $.gritter.add({ title: 'Grrrrrr!!!', text: 'Like that? :P', time: 2000, position: 'top-left' });
     });
   });
-  
 
 FLAIR
 

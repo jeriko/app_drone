@@ -4,7 +4,8 @@ class Bootstrap < Drone
   desc "Installs Twitter Bootstrap stylesheets and javascripts"
   category :ui
 
-  param :vendor, :boolean, info: 'place a local copy of the files into the repo for customization'
+  #param :vendor, :boolean, info: 'place a local copy of the files into the repo for customization'
+
   param :responsive, :boolean, info: 'include responsive grid'
   param :font_awesome, :boolean, info: 'use font-awesome for icons', default: true
   param :javascript_plugins, :choose_many, info: 'pipeline javascript plugin files', default: [], choices: %w(modal dropdown scrollspy tab tooltip popover alert button collapse carousel typeahead)
