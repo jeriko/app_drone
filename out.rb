@@ -27,7 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'nifty-generators', :group=>:development
+@generator.gem 'nested_form'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -48,6 +48,7 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
+//= require jquery_nested_form
 
 COFFEE
 
@@ -112,10 +113,6 @@ FLAIR
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
 
-# --- 
-# AppDrone::NiftyGeneratorz
-# ---
-generate 'nifty:config'
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green
   end

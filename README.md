@@ -252,6 +252,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [views] HighVoltage, by ThoughtBot
 - [views] Flair (drones use this to demonstrate their working functionality)
 - [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
+- [views] NestedForm, for managing multiple models in a single form
 - [auth] Sorcery, for no-frills user authentication
 - [auth] CanCan, for role-based authorization
 - [auth] EasyRoles, to add roles to your User models
@@ -268,6 +269,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [requests] WillPaginate, with automatic Bootstrap integration
 - [dev] LetterOpener, to preview email in the browser instead of sending it\
 - [misc] Chronic, for natural language date parsing
+- [misc] NiftyGenerators, a collection of useful Rails generator scripts
 - [production] NewRelic app performance monitoring
 
 
@@ -318,7 +320,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [?] Nokogiri
 - [?] Mechanize
 - [?] Money
-- [misc] NiftyGenerators
 - [ui] jQuery.transit
 - [ui] Ember Touch (gesture support for Ember: pinch, pan etc.)
 
