@@ -27,7 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'sorcery'
+@generator.gem 'cancan'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -113,9 +113,9 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::Sorcery
+# AppDrone::Cancan
 # ---
-generate "sorcery:install"
+generate 'cancan:ability'
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green

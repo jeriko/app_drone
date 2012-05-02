@@ -252,7 +252,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [views] HighVoltage, by ThoughtBot
 - [views] Flair (drones use this to demonstrate their working functionality)
 - [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
-- [auth] Sorcery, for stripped down user authentication
+- [auth] Sorcery, for no-frills user authentication
 - [ui] Chosen select, by harvestHQ
 - [ui] Bootstrap, by Twitter
 - [ui] Gritter, for jQuery growl-like notifications
