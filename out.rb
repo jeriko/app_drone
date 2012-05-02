@@ -27,8 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'easy_roles'
-@generator.gem 'underscore-rails'
+@generator.gem 'migrant'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -49,7 +48,6 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require underscore
 
 COFFEE
 
@@ -104,33 +102,6 @@ FileUtils.mkpath 'app/views/pages'
 @generator.create_file 'app/views/pages/flair.html.slim', <<-FLAIR
 h1 Flair!
 
-
-h3 Underscore
-
-button#underscoreTrigger Count to 10
-span#underscoreFeedback style="color: green"
-
-javascript:
-  $(function() {
-    $('#underscoreTrigger').click(function() {
-      var numbers = [1,2,3,4,5,6,7,8,9,10];
-      var delay = 300;
-      var last = _.last(numbers);
-      var feedback = $('#underscoreFeedback');
-
-      feedback.empty();
-
-      _.forEach(numbers, function(i) {
-        setTimeout(function() {
-          feedback.append(i);
-          feedback.append(i == last ? '!' : ' ');
-        },delay*(i-1));
-      });
-
-      setTimeout(function() { feedback.fadeOut(); }, delay*last);
-
-    });
-  });
 
 FLAIR
 

@@ -23,8 +23,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :easy_roles_45
-    template.add :underscore
+    template.add :migrant
 
     template.render_to_file
   end
