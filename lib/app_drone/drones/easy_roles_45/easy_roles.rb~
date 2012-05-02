@@ -1,0 +1,13 @@
+module AppDrone
+class EasyRoles < Drone
+  desc "Easy user roles"
+  category :auth
+ 
+  depends_on :bundle
+
+  def align
+    bundle.add 'easy_roles'
+  end
+
+end
+end

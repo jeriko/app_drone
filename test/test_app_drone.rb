@@ -17,6 +17,7 @@ class AppDroneTest < Test::Unit::TestCase
 
   def test_dependants
     d = AppDrone::Bundle.dependants
+    puts AppDrone::Drone.drones
   end
 
   def test_basic_behavior

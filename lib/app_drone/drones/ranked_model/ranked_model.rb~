@@ -1,0 +1,13 @@
+module AppDrone
+class RankedModel < Drone
+  desc "Rank and sort your objects"
+  category :model
+
+  depends_on :bundle
+
+  def align
+    bundle.add 'ranked_model'
+  end
+
+end
+end
