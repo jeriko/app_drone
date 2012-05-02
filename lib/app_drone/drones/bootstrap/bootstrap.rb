@@ -15,12 +15,12 @@ class Bootstrap < Drone
 
   def align
     bundle.add 'compass_twitter_bootstrap', git: 'git://github.com/vwall/compass-twitter-bootstrap.git', group: :assets
-    param(:vendor) ? align_vendor : align_bundle
+    false ? align_vendor : align_bundle
     flair!
   end
 
   def execute
-    param(:vendor) ? execute_vendor : execute_bundle
+    false ? execute_vendor : execute_bundle
   end
 
  private
