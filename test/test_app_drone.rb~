@@ -24,7 +24,7 @@ class AppDroneTest < Test::Unit::TestCase
     add_defaults_to_template(template)
 
     template.add :migrant
-    template.add :squeel
+    template.add :squeel, generate_initializer: true
 
     template.render_to_file
   end

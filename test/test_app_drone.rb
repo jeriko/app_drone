@@ -23,8 +23,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :migrant
-    template.add :squeel, generate_initializer: true
+    template.add :ranked_model
 
     template.render_to_file
   end
