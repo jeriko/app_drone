@@ -273,27 +273,18 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 ### Frozen drones (currently in development)
 
 - [base] Database (currenly rake db:migrate in template will break non-sqlite dbs)
-- [auth] CanCan
-- [auth] Sorcery
 - [auth] Devise
-- [auth] EasyRoles
 - [test] RSpec
 - [test] FactoryGirl
 - [test] DatabaseCleaner
 - [test] TimeCop
 - [test] Capybara
 - [test] Shoulda
-- [test?] Chronic
 - [dev] Migrant (+ Pickle support?)
 - [dev] Guard
 - [source-control] Git
-- [model] RankedModel
-- [model] Squeel
-- [requests] Responders
 - [requests] InheritedResources (deprecated)
 - [requests] UserAgent blocking script
-- [dev] Letter opener
-- [ui] Underscore Rails
 - [mailing] SendGrid
 
 ### Future drones (TODO - I'll get there some day!)

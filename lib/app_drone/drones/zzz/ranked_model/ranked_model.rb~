@@ -1,9 +1,0 @@
-# Incomplete
-module AppDrone
-class RankedModel < Drone
-  desc "Installs RankedModel"
-  def align
-    gem.add 'ranked_model'
-  end
-end
-end
