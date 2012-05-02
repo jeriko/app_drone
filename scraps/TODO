@@ -1,0 +1,35 @@
+** When finished: if Flair, say: 'Boot your app and visit /pages/flair to see a functionality demo'
+** When finished: ...
+
+- [requests] Responders
+- [views] Nested Form
+- [misc] NiftyGenerators
+
+- [test] RSpec
+- [test] FactoryGirl
+- [test] DatabaseCleaner
+- [test] TimeCop
+- [test] Capybara
+- [test] Shoulda
+- [test] Chronic
+
+- [mailing] SendGrid
+- [uploads] CarrierWave (and optional cloud resizing thingy)
+- [uploads] Fog
+- [uploads] Remotipart
+- [processing] RMagick / minimagick
+- [ui] jQuery shims
+- [ui] jQuery UI (vendor + theme etc.)
+- [ui] pie.htc for IE
+- [ui] HTML5 shim for IE
+- [requests] HasScope
+- [requests] will-paginate (+bootstrap-will-paginate)
+- [dev] rails-best-practices (and the other output gem for debugging)
+- [dev] RailsErd
+- [production] Airbrake + API Key
+- [production] NewRelic
+- [?] Launchy
+
+- [base] Database: rake [db:create, db:migrate] at very end of generator, options? postgres etc. (will need a dropdown option in the app for this)
+- [auth] Devise
+

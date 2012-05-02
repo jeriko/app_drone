@@ -1,0 +1,15 @@
+module AppDrone
+class < Drone
+  desc ""
+  category :
+
+  depends_on :bundle
+
+  def align
+  end
+
+  def execute
+  end
+
+end
+end
