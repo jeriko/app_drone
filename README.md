@@ -6,7 +6,7 @@
 
 AppDrone aims to take the bore out of setting up a Rails app just the way you like it. It's a code library that builds generator code that builds your Rails app code - R A I L S C E P T I O N!
 
-*If you're super lazy, a shiny UI for choosing and configuring drones is coming soon! Right now, it's CLI only :P*
+Don't want to fiddle around with the command line? No problem! Head on over to http://appdrone.herokuapp.com and make use of the shiny Ember.js-powered UI.
 
 
 ## Installation
