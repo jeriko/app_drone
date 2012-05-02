@@ -264,6 +264,8 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] Underscore.js utility belt
 - [ux] Ember (the Ember.js library)
 - [requests] Responder(s), from Plataformatec
+- [requests] HasScope, for mapping filters to controller actions
+- [requests] WillPaginate, with automatic Bootstrap integration
 - [dev] LetterOpener, to preview email in the browser instead of sending it
 
 

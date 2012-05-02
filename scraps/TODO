@@ -1,8 +1,7 @@
 ** When finished: if Flair, say: 'Boot your app and visit /pages/flair to see a functionality demo'
-** When finished: ...
+** When finished: general stats/instructions?
+** Will paginate bootstrap flair?
 
-- [requests] Responders
-- [requests] HasScope
 - [views] Nested Form
 - [misc] NiftyGenerators
 
@@ -23,8 +22,7 @@
 - [ui] jQuery UI (vendor + theme etc.)
 - [ui] pie.htc for IE
 - [ui] HTML5 shim for IE
-- [requests] HasScope
-- [requests] will-paginate (+bootstrap-will-paginate)
+
 - [dev] rails-best-practices (and the other output gem for debugging)
 - [dev] RailsErd
 - [production] Airbrake + API Key
