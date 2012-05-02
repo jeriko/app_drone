@@ -268,6 +268,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [requests] WillPaginate, with automatic Bootstrap integration
 - [dev] LetterOpener, to preview email in the browser instead of sending it\
 - [misc] Chronic, for natural language date parsing
+- [production] NewRelic app performance monitoring
 
 
 ### Frozen drones (currently in development)
@@ -306,7 +307,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [dev] Pivotal tracker
 - [dev] RailsErd
 - [production] Airbrake + API Key
-- [production] NewRelic
 - [production] EngineYard for deployment
 - [ux] Backbone integration + Skim
 - [views] Nested Form
