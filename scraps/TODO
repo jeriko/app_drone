@@ -1,6 +1,6 @@
 ** When finished: if Flair, say: 'Boot your app and visit /pages/flair to see a functionality demo'
 ** When finished: general stats/instructions?
-** Will paginate bootstrap flair?
+** Will-paginate bootstrap flair?
 
 - [mailing] SendGrid https://github.com/stephenb/sendgrid
 - [mailing] Postmark https://github.com/wildbit/postmark-rails
@@ -19,11 +19,12 @@
 - [test] Capybara
 - [test] Shoulda
 
-- [ui] jQuery shims
 - [ui] jQuery UI (vendor + theme etc.)
-- [ui] HTML5 placeholder shim - https://github.com/parndt/jquery-html5-placeholder-shim
-- [ui] pie.htc for IE
-- [ui] HTML5 shim/shiv for IE http://code.google.com/p/html5shiv/
+- [ui_shim] HTML5 placeholder shim - https://github.com/parndt/jquery-html5-placeholder-shim
+- [ui_shim] HTML5 shim/shiv for IE -- http://ejohn.org/blog/html5-shiv/  http://code.google.com/p/html5shiv/ (or use modernizr?)
+- [ui_shim] pie.htc for IE
+- [ui_shim] jQuery shims
+
 
 LATER:
 - [?] Resque
