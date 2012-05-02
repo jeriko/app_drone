@@ -11,7 +11,6 @@
 - [test] TimeCop
 - [test] Capybara
 - [test] Shoulda
-- [test] Chronic
 
 - [mailing] SendGrid
 - [uploads] CarrierWave (and optional cloud resizing thingy)
@@ -28,7 +27,6 @@
 - [production] Airbrake + API Key
 - [production] NewRelic
 - [?] Launchy
-
 - [base] Database: rake [db:create, db:migrate] at very end of generator, options? postgres etc. (will need a dropdown option in the app for this)
 - [auth] Devise
 

@@ -27,9 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'will_paginate'
-@generator.gem 'bootstrap-will_paginate'
-@generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
+@generator.gem 'chronic'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -71,7 +69,6 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
-@import 'compass_twitter_bootstrap_awesome'
 
 SASS
 
@@ -105,16 +102,6 @@ FileUtils.mkpath 'app/views/pages'
 @generator.create_file 'app/views/pages/flair.html.slim', <<-FLAIR
 h1 Flair!
 
-
-h3 Bootstrap
-
-.btn-group
-  a.btn.btn-primary.btn-large Shiny!
-  
-  a.btn.btn-large
-    i.icon-thumbs-up
-    |  with Font Awesome!
-  
 
 FLAIR
 
