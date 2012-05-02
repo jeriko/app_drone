@@ -5,7 +5,7 @@ class Cancan < Drone
 
   depends_on :bundle
 
-  param :generate_abilities, :boolen, info: 'build the Ability.rb file'
+  param :generate_abilities, :boolean, info: 'build the Ability.rb file'
 
   def align
     bundle.add 'cancan'
