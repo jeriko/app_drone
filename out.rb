@@ -27,7 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'gritter'
+@generator.gem 'sorcery'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -48,7 +48,6 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require gritter
 
 COFFEE
 
@@ -70,7 +69,6 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
-@import 'gritter'
 
 SASS
 
@@ -105,17 +103,6 @@ FileUtils.mkpath 'app/views/pages'
 h1 Flair!
 
 
-h3 Gritter
-
-button#gritterTrigger Growl for me, baby!
-
-javascript:
-  $(function() {
-    $('#gritterTrigger').click(function() {
-      $.gritter.add({ title: 'Grrrrrr!!!', text: 'Like that? :P', time: 2000, position: 'top-left' });
-    });
-  });
-
 FLAIR
 
 # --- 
@@ -126,9 +113,9 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::Gritter
+# AppDrone::Sorcery
 # ---
-generate 'gritter:locale'
+generate "sorcery:install"
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green

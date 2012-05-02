@@ -23,7 +23,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :gritter
+    template.add :sorcery, configure: true
 
     template.render_to_file
   end
