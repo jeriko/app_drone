@@ -6,7 +6,7 @@
 
 AppDrone aims to take the bore out of setting up a Rails app just the way you like it. It's a code library that builds generator code that builds your Rails app code - R A I L S C E P T I O N!
 
-Don't want to fiddle around with the command line? No problem! Head on over to http://appdrone.herokuapp.com and make use of the shiny Ember.js-powered UI.
+Don't want to fiddle around with the command line? No problem! Head on over to http://drone.bz and make use of the shiny Ember.js-powered UI.
 
 
 ## Installation
@@ -254,6 +254,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
 - [ui] Chosen, by harvestHQ
 - [ui] Bootstrap, by Twitter
+- [ui] Gritter, for jQuery growl-like notifications
 - [ux] Ember (the Ember.js library)
 
 

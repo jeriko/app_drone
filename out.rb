@@ -27,11 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'simple_form'
-@generator.gem 'country_select'
-@generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
-@generator.gem 'chosen-rails'
-@generator.gem 'ember-rails'
+@generator.gem 'gritter'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -52,19 +48,14 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require bootstrap-modal
-//= require bootstrap-transition
-//= require chosen-jquery
-//= require ember
-//= require ember/#{app_name}.js
+//= require gritter
 
 COFFEE
 
 @coffee_init_path = File.join %w(app assets javascripts init.js.coffee)
 @generator.create_file @coffee_init_path, <<-COFFEE
 $(document).ready ->
-  $('.chzn-select').chosen();
-
+  
 
 COFFEE
 
@@ -76,12 +67,10 @@ COFFEE
 @sass_asset_path = File.join %w(app assets stylesheets application.css.sass)
 
 @generator.create_file @sass_asset_path, <<-SASS
-/*= require chosen */
 /*= require_self */
 
 @import 'compass'
-@import 'compass_twitter_bootstrap_awesome'
-@import 'compass_twitter_bootstrap_responsive'
+@import 'gritter'
 
 SASS
 
@@ -116,22 +105,20 @@ FileUtils.mkpath 'app/views/pages'
 h1 Flair!
 
 
-h3 Bootstrap
+h3 Gritter
 
-.btn-group
-  a.btn.btn-primary.btn-large Shiny!
+button#gritterTrigger Growl for me, baby!
+
+javascript:
+  $(function() {
+    $('#gritterTrigger').click(function() {
+      $.gritter.add({
+	title: 'Grrrrrrrr!!',
+	text: 'Like that? :P'
+      });
+    });
+  });
   
-  a.btn.btn-large
-    i.icon-thumbs-up
-    |  with Font Awesome!
-  
-
-h3 Chosen
-
-select.chzn-select
-  option One
-  option Two
-  option Three
 
 FLAIR
 
@@ -143,16 +130,9 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::SimpleForm
+# AppDrone::Gritter
 # ---
-generate "simple_form:install --bootstrap"
-
-# --- 
-# AppDrone::Ember
-# ---
-
-generate "ember:bootstrap"
-
+generate 'gritter:locale'
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green

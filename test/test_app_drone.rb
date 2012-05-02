@@ -16,17 +16,14 @@ class AppDroneTest < Test::Unit::TestCase
   end
 
   def test_dependants
-    puts AppDrone::Bundle.dependants
+    d = AppDrone::Bundle.dependants
   end
 
   def test_basic_behavior
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :simple_form
-    template.add :bootstrap, responsive: true, javascript_plugins: %w(modal transition)
-    template.add :chosen
-    template.add :ember, app_skeleton: true
+    template.add :gritter
 
     template.render_to_file
   end
