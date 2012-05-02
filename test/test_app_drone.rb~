@@ -24,7 +24,7 @@ class AppDroneTest < Test::Unit::TestCase
     add_defaults_to_template(template)
 
     template.add :ranked_model
- 
+
     template.render_to_file
   end
 

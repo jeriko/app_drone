@@ -27,7 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'ranked-model'
+@generator.gem 'letter_opener', :group=>:development
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -111,6 +111,11 @@ FLAIR
 @generator.remove_file File.join %w(public index.html)
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
+
+# --- 
+# AppDrone::LetterOpener
+# ---
+@generator.inject_into_file 'config/environments/development.rb', "\n\n  config.action_mailer.delivery_method = :letter_opener", before: "\nend"
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green
