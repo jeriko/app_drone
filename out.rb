@@ -27,8 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'migrant'
-@generator.gem 'squeel'
+@generator.gem 'ranked-model'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -112,11 +111,6 @@ FLAIR
 @generator.remove_file File.join %w(public index.html)
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
-
-# --- 
-# AppDrone::Squeel
-# ---
-generate 'squeel:initializer'
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green
