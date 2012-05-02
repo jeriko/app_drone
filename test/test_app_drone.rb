@@ -24,7 +24,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :letter_opener
+    template.add :responder
 
     template.render_to_file
   end

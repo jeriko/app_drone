@@ -263,6 +263,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] Gritter, for jQuery growl-like notifications
 - [ui] Underscore.js utility belt
 - [ux] Ember (the Ember.js library)
+- [requests] Responder(s), from Plataformatec
 - [dev] LetterOpener, to preview email in the browser instead of sending it
 
 
