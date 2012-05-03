@@ -25,9 +25,21 @@ class AppBuilder < Rails::AppBuilder
 <% end %>
 
   def leftovers
+
     <%= leftover_directives.join("\n") %>
+
+    # This should be removed when the database drone is installed
     rake 'db:migrate'
+
+    # Drone Notices
+    <% drone_notices.each do |drone, notices| %>
+      <% notices.each do |notice| %>
+        say "[<%= drone.human_name %>] <%= notice %>", :red
+      <% end %>
+    <% end %>
+
     say "She's all yours, sparky!\n\n", :green
+
   end
 
 end

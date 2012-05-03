@@ -37,6 +37,10 @@ class Drone
     return @template.hook?(drone_klass)
   end
 
+  def notify!(notice)
+    @template.notify! notice, self
+  end
+
   # Expected implementations
   def align; end
   def execute; end

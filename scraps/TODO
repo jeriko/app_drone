@@ -3,8 +3,8 @@
 ** Will-paginate bootstrap flair?
 
 - [uploads] CarrierWave
-- [uploads] Cloudinary
 - [uploads] Fog
+- [uploads] Cloudinary
 - [uploads] Remotipart
 
 - [misc] Spork

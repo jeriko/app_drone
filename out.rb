@@ -27,8 +27,8 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'rspec-rails', :group=>["development", "test"]
-@generator.gem 'factory_girl_rails', :group=>["development", "test"]
+@generator.gem 'carrierwave'
+@generator.gem 'fog'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -39,6 +39,7 @@ run_bundle
 
 
   def leftovers
+
     # --- 
 # AppDrone::Javascript
 # ---
@@ -113,13 +114,19 @@ FLAIR
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
 
-# --- 
-# AppDrone::Rspec
-# ---
-generate "rspec:install"
 
+    # This should be removed when the database drone is installed
     rake 'db:migrate'
+
+    # Drone Notices
+    
+      
+        say "[Carrierwave] Create \"config/initializers/fog.rb\" and load your Fog credentials into Carrierwave!", :yellow
+      
+    
+
     say "She's all yours, sparky!\n\n", :green
+
   end
 
 end

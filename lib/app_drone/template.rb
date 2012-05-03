@@ -1,6 +1,6 @@
 module AppDrone
 class Template
-  def initialize; @drones = {}; @directives = {} end
+  def initialize; @drones = {}; @directives = {}; @drone_notices = {} end
 
   def add(ref,*params)
     klass = ref.is_a?(Class)? ref : ('AppDrone::' + ref.to_s.classify).constantize
@@ -9,6 +9,7 @@ class Template
 
   def drone_objects; @drones.values end
   def drone_classes; @drones.keys end
+  def drone_notices; @drone_notices end
   def hook?(klass); !@drones[klass].nil? end
   def hook(klass)
     raise "No such drone: #{klass}" unless i_klass = @drones[klass]
@@ -18,9 +19,13 @@ class Template
   def leftover_directives; @directives[:leftovers] || [] end
   def overridden_generator_methods; @directives.keys - [:leftovers] end
 
-  def do!(d,drone);
+  def do!(d,drone)
     generator_method = drone.class.generator_method || :leftovers
     (@directives[generator_method] ||= []) << d
+  end
+
+  def notify!(notice,drone)
+    (@drone_notices[drone.class] ||= []) << notice.gsub("'","\\'").gsub('"','\\"') # escape quotes
   end
   
   def render!
