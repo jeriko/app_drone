@@ -269,11 +269,13 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [requests] **WillPaginate**, with automatic Bootstrap integration
 - [dev] **LetterOpener**, to preview email in the browser instead of sending it\
 - [misc] **Chronic**, for natural language date parsing
+- [misc] **Timecop** - time travelling for Ruby
 - [misc] **NiftyGenerators**, a collection of useful Rails generator scripts
 - [production] **NewRelic** app performance monitoring
-- [uploads] Carrierwave file uploading plus optional Fog cloud storage
-- [test] RSpec for BDD
-- [test] Factory Girl for test fixtures
+- [uploads] **Carrierwave** file uploading plus optional Fog cloud storage
+- [uploads] **Remotipart**, for AJAX file uploads with jQuery
+- [test] **RSpec** for BDD
+- [test] **Factory Girl** for test fixtures
 
 ### Frozen drones (currently in development)
 
@@ -299,7 +301,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] jQuery UI (vendor + theme etc.)
 - [ui] pie.htc for IE
 - [ui] HTML5 shim for IE
-- [uploads] Remotipart
 - [uploads?] RMagick / minimagick
 - [requests] HasScope
 - [requests] will-paginate (+bootstrap-will-paginate)

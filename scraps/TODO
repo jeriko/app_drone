@@ -3,13 +3,9 @@
 ** Will-paginate bootstrap flair?
 
 - [uploads] Cloudinary
-- [uploads] Remotipart
-
 - [misc] Spork
-- [processing] RMagick / minimagick
 
-- [test] RSpec
-- [test] FactoryGirl
+
 - [test] DatabaseCleaner
 - [test] TimeCop
 - [test] Capybara

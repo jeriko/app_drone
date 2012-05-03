@@ -27,7 +27,8 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'remotipart'
+@generator.gem 'chronic'
+@generator.gem 'timecop'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -49,7 +50,6 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require jquery.remotipart
 
 COFFEE
 
