@@ -1,7 +1,7 @@
 module AppDrone
 class LetterOpener < Drone
   desc "Preview mail in the browser instead of sending it"
-  category :dev
+  category :misc # TODO :dev
 
   depends_on :bundle
 

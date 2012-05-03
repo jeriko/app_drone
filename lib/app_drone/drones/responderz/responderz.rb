@@ -1,7 +1,7 @@
 module AppDrone
 class Responderz < Drone
   desc "DRY up your controllers"
-  category :requests
+  category :controller
 
   depends_on :bundle
   

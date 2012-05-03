@@ -1,7 +1,7 @@
 module AppDrone
 class NewRelic < Drone
   desc "App performance monitoring"
-  category :production
+  category :misc # TODO :production
 
   depends_on :bundle
 

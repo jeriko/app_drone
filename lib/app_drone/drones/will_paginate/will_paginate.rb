@@ -1,7 +1,7 @@
 module AppDrone
 class WillPaginate < Drone
   desc "Simple pagination library, with automatic Bootstrap integration"
-  category :requests
+  category :controller
 
   depends_on :bundle
   pairs_with :bootstrap

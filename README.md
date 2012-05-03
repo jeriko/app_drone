@@ -282,14 +282,14 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] **Gritter** for jQuery growl-like notifications
 - [ui] **Underscore.js** utility belt
 - [ux] **Ember** (the Ember.js library)
-- [requests] **Responders** from Plataformatec
-- [requests] **HasScope** for mapping filters to controller actions
-- [requests] **WillPaginate** with automatic Bootstrap integration
-- [dev] **LetterOpener** to preview email in the browser instead of sending it\
+- [controller] **Responders** from Plataformatec
+- [controller] **HasScope** for mapping filters to controller actions
+- [controller] **WillPaginate** with automatic Bootstrap integration
+- [misc] **LetterOpener** to preview email in the browser instead of sending it\
 - [misc] **Chronic** for natural language date parsing
 - [misc] **Timecop** - time travelling for Ruby
 - [misc] **NiftyGenerators**, a collection of useful Rails generator scripts
-- [production] **NewRelic** app performance monitoring
+- [misc] **NewRelic** app performance monitoring
 - [uploads] **Carrierwave** file uploading plus optional Fog cloud storage
 - [uploads] **Remotipart**, for AJAX file uploads with jQuery
 - [test] **RSpec** for BDD
