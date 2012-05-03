@@ -34,6 +34,7 @@ class Drone
 
   def pair?(drone_symbol)
     drone_klass = ('AppDrone::' + drone_symbol.to_s.classify).constantize
+    puts drone_klass.to_s
     return @template.hook?(drone_klass)
   end
 

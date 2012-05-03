@@ -27,8 +27,9 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'chronic'
-@generator.gem 'timecop'
+@generator.gem 'rspec'
+@generator.gem 'simplecov', :require=>false, :group=>:test
+@generator.gem 'rspec-rails', :group=>["development", "test"]
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -113,6 +114,25 @@ FLAIR
 @generator.remove_file File.join %w(public index.html)
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
+
+# --- 
+# AppDrone::SimpleCov
+# ---
+@generator.create_file '.simplecov', <<-SIMPLECOV
+SimpleCov.start 'rails' do
+  # any custom configs like groups and filters can be here at a central place
+end
+SIMPLECOV
+
+# --- 
+# AppDrone::SimpleCov
+# ---
+prepend_file 'spec/spec_helper.rb', "require 'simplecov'\n"
+
+# --- 
+# AppDrone::Rspec
+# ---
+generate "rspec:install"
 
 
     # This should be removed when the database drone is installed

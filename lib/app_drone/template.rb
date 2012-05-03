@@ -31,6 +31,7 @@ class Template
   def render!
     return if @rendered
     DependencyChain.check_dependencies!(drone_classes)
+    drone_objects = AppDrone::DependencyChain.sort(drones)
     drone_objects.map(&:align)
     drone_objects.map(&:execute)
     @rendered = true
