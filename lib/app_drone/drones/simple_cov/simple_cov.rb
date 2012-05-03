@@ -8,7 +8,6 @@ class SimpleCov < Drone
   run_after :rspec
 
   def align
-    bundle.add 'rspec'
     bundle.add 'simplecov', require: false, group: :test
   end
 

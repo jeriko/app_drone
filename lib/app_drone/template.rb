@@ -31,6 +31,7 @@ class Template
   def render!
     return if @rendered
     DependencyChain.check_dependencies!(drone_classes)
+
     ordered_chain = AppDrone::DependencyChain.sort(drone_classes)
 
     ordered_chain.each { |klass| hook(klass).align }

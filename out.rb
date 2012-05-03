@@ -28,7 +28,6 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
 @generator.gem 'rspec-rails', :group=>["development", "test"]
-@generator.gem 'rspec'
 @generator.gem 'simplecov', :require=>false, :group=>:test
 
 run_bundle
@@ -132,7 +131,7 @@ SIMPLECOV
 # --- 
 # AppDrone::SimpleCov
 # ---
-prepend_file 'spec/spec_helper.rb', "require 'simplecov'\n"
+@generator.prepend_file 'spec/spec_helper.rb', "require 'simplecov'\n"
 
 
     # This should be removed when the database drone is installed

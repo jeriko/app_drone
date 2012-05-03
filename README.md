@@ -294,7 +294,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [uploads] **Remotipart**, for AJAX file uploads with jQuery
 - [test] **RSpec** for BDD
 - [test] **Factory Girl** test fixtures
-- [test] **SimpleCov** code coverage for Ruby 1.9, with RSpec integration
+- [test] **SimpleCov** code coverage for Ruby 1.9, with automatic RSpec integration
 
 ### Frozen drones (currently in development)
 
