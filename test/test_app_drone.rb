@@ -24,7 +24,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :carrierwave, fog: true
+    template.add :remotipart
 
     template.render_to_file
   end

@@ -27,8 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'carrierwave'
-@generator.gem 'fog'
+@generator.gem 'remotipart'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -50,6 +49,7 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
+//= require jquery.remotipart
 
 COFFEE
 
@@ -116,13 +116,11 @@ FLAIR
 
 
     # This should be removed when the database drone is installed
+    rake 'db:create'
     rake 'db:migrate'
 
+
     # Drone Notices
-    
-      
-        say "[Carrierwave] Create \"config/initializers/fog.rb\" and load your Fog credentials into Carrierwave!", :yellow
-      
     
 
     say "She's all yours, sparky!\n\n", :green

@@ -2,8 +2,6 @@
 ** When finished: general stats/instructions?
 ** Will-paginate bootstrap flair?
 
-- [uploads] CarrierWave
-- [uploads] Fog
 - [uploads] Cloudinary
 - [uploads] Remotipart
 

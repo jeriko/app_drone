@@ -271,14 +271,14 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [misc] **Chronic**, for natural language date parsing
 - [misc] **NiftyGenerators**, a collection of useful Rails generator scripts
 - [production] **NewRelic** app performance monitoring
-
+- [uploads] Carrierwave file uploading plus optional Fog cloud storage
+- [test] RSpec for BDD
+- [test] Factory Girl for test fixtures
 
 ### Frozen drones (currently in development)
 
-- [base] Database (currenly rake db:migrate in template will break non-sqlite dbs)
+- [base] Database (currently rake db:migrate in template will break non-sqlite dbs)
 - [auth] Devise
-- [test] RSpec
-- [test] FactoryGirl
 - [test] DatabaseCleaner
 - [test] TimeCop
 - [test] Capybara
@@ -299,8 +299,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] jQuery UI (vendor + theme etc.)
 - [ui] pie.htc for IE
 - [ui] HTML5 shim for IE
-- [uploads] CarrierWave (and optional cloud resizing thingy)
-- [uploads] Fog
 - [uploads] Remotipart
 - [uploads?] RMagick / minimagick
 - [requests] HasScope

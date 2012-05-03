@@ -29,7 +29,9 @@ class AppBuilder < Rails::AppBuilder
     <%= leftover_directives.join("\n") %>
 
     # This should be removed when the database drone is installed
+    rake 'db:create'
     rake 'db:migrate'
+
 
     # Drone Notices
     <% drone_notices.each do |drone, notices| %>
