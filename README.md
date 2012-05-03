@@ -277,6 +277,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [model] **Migrant** for easier schema management
 - [model] **Squeel** improving on ActiveRelation
 - [model] **RankedModel** for sorting and ranking objects
+- [model] **Stateflow** state machine for complex business decisions (or easy ones)
 - [ui] **Chosen select** by harvestHQ
 - [ui] **Bootstrap** by Twitter
 - [ui] **Gritter** for jQuery growl-like notifications
