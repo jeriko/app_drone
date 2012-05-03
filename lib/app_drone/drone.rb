@@ -34,7 +34,6 @@ class Drone
 
   def pair?(drone_symbol)
     drone_klass = ('AppDrone::' + drone_symbol.to_s.classify).constantize
-    puts drone_klass.to_s
     return @template.hook?(drone_klass)
   end
 
@@ -98,6 +97,11 @@ class Drone
     def pairs_with(*klass_symbols); @pairs = klass_symbols end
     def pairs
       (@pairs || []).map(&:to_app_drone_class)
+    end
+
+    def run_after(*klass_symbols); @precursors = klass_symbols end
+    def precursors
+      (@precursors || []).map(&:to_app_drone_class)
     end
 
     def owns_generator_method(m); @generator_method = m end

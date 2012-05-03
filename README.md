@@ -65,6 +65,24 @@ Dependencies are automatically checked, and a template will not render unless th
 
 *Note that most drones depend on `Bundle`, `Stylesheet` and `Javascript`.*
 
+To make sure a drone's directives are run after another drone's, use `run_after :drone, :another_drone`. Unlike `depends_on`, no dependency checking is done on template render, so you reference paired drones that may or may not exist in the final template. An example:
+
+    class AppDrone::SimpleCov
+      depends_on :bundle
+      pairs_with :rspec
+      run_after :rspec
+      
+      def align
+        bundle.add 'simplecov'
+      end
+      
+      def execute
+        do! :install
+        do! :rspec_integration if pair?(:rspec)
+        # we can be certain that rspec's generated files exist to modify
+      end
+    end
+
 
 ### Active drones
 

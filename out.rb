@@ -27,9 +27,9 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
+@generator.gem 'rspec-rails', :group=>["development", "test"]
 @generator.gem 'rspec'
 @generator.gem 'simplecov', :require=>false, :group=>:test
-@generator.gem 'rspec-rails', :group=>["development", "test"]
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -116,6 +116,11 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
+# AppDrone::Rspec
+# ---
+generate "rspec:install"
+
+# --- 
 # AppDrone::SimpleCov
 # ---
 @generator.create_file '.simplecov', <<-SIMPLECOV
@@ -128,11 +133,6 @@ SIMPLECOV
 # AppDrone::SimpleCov
 # ---
 prepend_file 'spec/spec_helper.rb', "require 'simplecov'\n"
-
-# --- 
-# AppDrone::Rspec
-# ---
-generate "rspec:install"
 
 
     # This should be removed when the database drone is installed

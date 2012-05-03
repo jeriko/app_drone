@@ -65,6 +65,12 @@ class AppDroneTest < Test::Unit::TestCase
     assert_equal DependencyChain.sort(chain), sorted_chain
   end
 
+  def test_dependency_chain_run_after
+    chain = [AppDrone::SimpleCov, AppDrone::Rspec, AppDrone::Bundle]
+    sorted_chain = [AppDrone::Bundle, AppDrone::Rspec, AppDrone::SimpleCov]
+    assert_equal DependencyChain.sort(chain), sorted_chain
+  end
+
  private
   def add_defaults_to_template(template)
     defaults = [:bundle, :javascript, :stylesheet, :slim_view, :high_voltage, :flair, :cleanup]

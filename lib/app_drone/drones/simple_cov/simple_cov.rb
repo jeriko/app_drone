@@ -5,6 +5,7 @@ class SimpleCov < Drone
 
   depends_on :bundle
   pairs_with :rspec
+  run_after :rspec
 
   def align
     bundle.add 'rspec'

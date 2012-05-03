@@ -42,7 +42,14 @@ class DependencyChain
 
    private
     def dependency_indices(drones,drone)
-      drone.dependencies.map { |d| drones.index(d) }
+      dependencies = drone.dependencies
+
+      precursors = drone.precursors
+      active_precursors = drones & precursors
+
+      preceding_drones = (dependencies + active_precursors).uniq
+      
+      preceding_drones.map { |d| drones.index(d) }
     end
 
     def last_dependency_index(drones,drone)
