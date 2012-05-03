@@ -1,5 +1,0 @@
-module AppDrone
-class Dependency
-  def initialize()
-end
-end

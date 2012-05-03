@@ -1,1 +1,0 @@
-generate "simple_form:install<%= ' --bootstrap' if pair?(:bootstrap) %>"

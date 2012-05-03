@@ -1,7 +1,0 @@
-.btn-group
-  a.btn.btn-primary.btn-large Shiny!
-  <% if param(:font_awesome) %>
-  a.btn.btn-large
-    i.icon-heart
-    |  with Font Awesome!
-  <% end %>

@@ -1,1 +1,0 @@
-@generator.inject_into_file 'config/environments/development.rb', "\n  config.action_mailer.delivery_method = :letter_opener", before: "\nend"

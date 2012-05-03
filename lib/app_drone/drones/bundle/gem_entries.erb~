@@ -1,6 +1,0 @@
-<% gems.each { |g| %>@generator.gem '<%= g.name %>'<%= g.opts.to_s.gsub('{',', ').gsub('}','') %>
-<% } %>
-run_bundle
-@generator.options = @generator.options.dup
-@generator.options[:skip_bundle] = true
-@generator.options.freeze

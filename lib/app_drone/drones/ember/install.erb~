@@ -1,3 +1,0 @@
-<% if param(:app_skeleton) %>
-generate "ember:bootstrap"
-<% end %>
