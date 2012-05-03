@@ -2,14 +2,12 @@
 ** When finished: general stats/instructions?
 ** Will-paginate bootstrap flair?
 
-- [mailing] SendGrid https://github.com/stephenb/sendgrid
-- [mailing] Postmark https://github.com/wildbit/postmark-rails
-
 - [uploads] CarrierWave
 - [uploads] Cloudinary
 - [uploads] Fog
 - [uploads] Remotipart
 
+- [misc] Spork
 - [processing] RMagick / minimagick
 
 - [test] RSpec
@@ -25,11 +23,16 @@
 - [ui_shim] pie.htc for IE
 - [ui_shim] jQuery shims
 
+- [mailing] SendGrid https://github.com/stephenb/sendgrid
+- [mailing] Postmark https://github.com/wildbit/postmark-rails
+
+- [?] DelayedJob
+- [search] Sphinx
+- put has_scope in [search]?
 
 LATER:
 - [?] Resque
 - [?] Redis
-- [?] DelayedJob
 - [dev] rails-best-practices (and the other output gem for debugging)
 - [dev] RailsErd
 - [production] Airbrake + API Key

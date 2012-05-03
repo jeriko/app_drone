@@ -1,4 +1,7 @@
 APP:
 
 - add data-related="whoisdandavey(:description)" to share link
-- add platform 45 logo to foter
+- add platform 45 logo to footer
+- choose, configure, compile: add 1, 2, 3 somewhere
+
+- choose_one dropdown in ember app

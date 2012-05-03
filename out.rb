@@ -27,7 +27,8 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'nested_form'
+@generator.gem 'rspec-rails', :group=>["development", "test"]
+@generator.gem 'factory_girl_rails', :group=>["development", "test"]
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -48,7 +49,6 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require jquery_nested_form
 
 COFFEE
 
@@ -112,6 +112,11 @@ FLAIR
 @generator.remove_file File.join %w(public index.html)
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
+
+# --- 
+# AppDrone::Rspec
+# ---
+generate "rspec:install"
 
     rake 'db:migrate'
     say "She's all yours, sparky!\n\n", :green

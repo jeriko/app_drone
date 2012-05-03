@@ -244,33 +244,33 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 ### Active drones (put 'em to work!)
 
-- [base] Bundle
-- [base] Stylesheet (Sass & Compass)
-- [base] Javascript (Coffescript & jQuery)
-- [base] SlimView
-- [base] Cleanup
-- [views] HighVoltage, by ThoughtBot
-- [views] Flair (drones use this to demonstrate their working functionality)
-- [views] SimpleForm (with optional Country Select and automatic Twitter Bootstrap integration)
-- [views] NestedForm, for managing multiple models in a single form
-- [auth] Sorcery, for no-frills user authentication
-- [auth] CanCan, for role-based authorization
-- [auth] EasyRoles, to add roles to your User models
-- [model] Migrant, for easier schema management
-- [model] Squeel, improving on ActiveRelation
-- [model] RankedModel, for sorting and ranking objects
-- [ui] Chosen select, by harvestHQ
-- [ui] Bootstrap, by Twitter
-- [ui] Gritter, for jQuery growl-like notifications
-- [ui] Underscore.js utility belt
-- [ux] Ember (the Ember.js library)
-- [requests] Responder(s), from Plataformatec
-- [requests] HasScope, for mapping filters to controller actions
-- [requests] WillPaginate, with automatic Bootstrap integration
-- [dev] LetterOpener, to preview email in the browser instead of sending it\
-- [misc] Chronic, for natural language date parsing
-- [misc] NiftyGenerators, a collection of useful Rails generator scripts
-- [production] NewRelic app performance monitoring
+- [base] **Bundle**
+- [base] **Stylesheet** (Sass & Compass)
+- [base] **Javascript** (Coffescript & jQuery)
+- [base] **SlimView** (Slim, laid out right)
+- [base] **Cleanup**
+- [views] **HighVoltage**, by ThoughtBot
+- [views] **Flair** (drones use this to demonstrate their working functionality)
+- [views] **SimpleForm**, with optional Country Select and automatic Twitter Bootstrap integration
+- [views] **NestedForm**, for managing multiple models in a single form
+- [auth] **Sorcery**, for no-frills user authentication
+- [auth] **CanCan**, for role-based authorization
+- [auth] **EasyRoles**, to add roles to your User models
+- [model] **Migrant**, for easier schema management
+- [model] **Squeel**, improving on ActiveRelation
+- [model] **RankedModel**, for sorting and ranking objects
+- [ui] **Chosen select**, by harvestHQ
+- [ui] **Bootstrap**, by Twitter
+- [ui] **Gritter**, for jQuery growl-like notifications
+- [ui] **Underscore.js** utility belt
+- [ux] **Ember** (the Ember.js library)
+- [requests] **Responders**, from Plataformatec
+- [requests] **HasScope**, for mapping filters to controller actions
+- [requests] **WillPaginate**, with automatic Bootstrap integration
+- [dev] **LetterOpener**, to preview email in the browser instead of sending it\
+- [misc] **Chronic**, for natural language date parsing
+- [misc] **NiftyGenerators**, a collection of useful Rails generator scripts
+- [production] **NewRelic** app performance monitoring
 
 
 ### Frozen drones (currently in development)
@@ -283,7 +283,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [test] TimeCop
 - [test] Capybara
 - [test] Shoulda
-- [dev] Migrant (+ Pickle support?)
 - [dev] Guard
 - [source-control] Git
 - [requests] InheritedResources (deprecated)
@@ -293,6 +292,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 ### Future drones (TODO - I'll get there some day!)
 
 - [ui] Stylesheet utils
+- [ui] Calendrical for jQuery
 - [ui] SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - [ui] Bootstrap: vendor files rather than gem require (is this necessary? seems all variables can be customized in an external sheet as long as it's required before compass_twitter_bootstrap)
 - [ui] jQuery shims
@@ -321,6 +321,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [?] Mechanize
 - [?] Money
 - [ui] jQuery.transit
+- [ui] jQuery joyride
 - [ui] Ember Touch (gesture support for Ember: pinch, pan etc.)
 
 
