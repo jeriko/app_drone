@@ -4,10 +4,7 @@
 
 - [uploads] Cloudinary
 - [misc] Spork
-
-
 - [test] DatabaseCleaner
-- [test] TimeCop
 - [test] Capybara
 - [test] Shoulda
 
