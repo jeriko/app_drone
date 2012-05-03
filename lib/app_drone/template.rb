@@ -3,7 +3,7 @@ class Template
   def initialize; @drones = {}; @directives = {}; @drone_notices = {} end
 
   def add(ref,*params)
-    klass = ref.is_a?(Class)? ref : ('AppDrone::' + ref.to_s.classify).constantize
+    klass = ref.is_a?(Class)? ref : ref.to_sym.to_app_drone_class
     @drones[klass] = klass.new(self, params.first) # no idea why `.first` is required..
   end
 

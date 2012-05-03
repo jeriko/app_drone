@@ -12,6 +12,6 @@ end
 
 class Symbol
   def to_app_drone_class
-    ('AppDrone::' + self.to_s.classify).constantize
+    ('AppDrone::' + self.to_s.camelize).constantize
   end
 end

@@ -1,5 +1,5 @@
 module AppDrone
-class NiftyGeneratorz < Drone
+class NiftyGenerators < Drone
   desc "A collection of useful Rails generator scripts"
   category :misc
 

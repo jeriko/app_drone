@@ -27,6 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
+@generator.gem 'nifty-generators', :group=>:development
 @generator.gem 'rspec-rails', :group=>["development", "test"]
 @generator.gem 'simplecov', :require=>false, :group=>:test
 
@@ -114,6 +115,10 @@ FLAIR
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
 
+# --- 
+# AppDrone::NiftyGenerators
+# ---
+generate 'nifty:config'
 # --- 
 # AppDrone::Rspec
 # ---

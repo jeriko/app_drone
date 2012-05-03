@@ -33,7 +33,7 @@ class Drone
   end
 
   def pair?(drone_symbol)
-    drone_klass = ('AppDrone::' + drone_symbol.to_s.classify).constantize
+    drone_klass = drone_symbol.to_app_drone_class
     return @template.hook?(drone_klass)
   end
 
@@ -49,7 +49,7 @@ class Drone
   def setup; end
 
   def render(partial, opts={})
-    class_name = self.class.to_s.split('::').last.underscore
+    class_name = self.class.to_sym
     template_path = "/drones/#{class_name}/#{partial}.erb"
     full_path = File.dirname(__FILE__) + template_path
     snippet = ERB.new File.read(full_path)
