@@ -298,29 +298,40 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 
 ### Frozen drones (currently in development)
 
-- [base] Database (currently rake db:migrate in template will break non-sqlite dbs)
+- [base] Database: rake [db:create, db:migrate] at very end of generator, options? postgres etc. (will need a dropdown option in the app for this)
 - [auth] Devise
 - [test] DatabaseCleaner
-- [test] TimeCop
 - [test] Capybara
 - [test] Shoulda
 - [dev] Guard
 - [source-control] Git
 - [requests] InheritedResources (deprecated)
 - [requests] UserAgent blocking script
-- [mailing] SendGrid
+- [mailing] SendGrid https://github.com/stephenb/sendgrid
+- [mailing] Postmark https://github.com/wildbit/postmark-rails
+
 
 ### Future drones (TODO - I'll get there some day!)
 
+- [ux] Backbone integration + Skim
+- [uploads] Cloudinary
+- [dev] Spork
+- [search] Sphinx
+- [?] DelayedJob
+- [?] Resque
+- [?] Redis
+- [?] Faye
+- [test] Cucumber
 - [ui] Stylesheet utils
 - [ui] Calendrical for jQuery
 - [ui] SlimViews: Add browser-specific classes to <html> via useragent + helpers..
 - [ui] Bootstrap: vendor files rather than gem require (is this necessary? seems all variables can be customized in an external sheet as long as it's required before compass_twitter_bootstrap)
-- [ui] jQuery shims
 - [ui] jQuery UI (vendor + theme etc.)
-- [ui] pie.htc for IE
-- [ui] HTML5 shim for IE
-- [uploads?] RMagick / minimagick
+- [ui_shim] pie.htc for IE
+- [ui_shim] jQuery shims
+- [ui_shim] HTML5 placeholder shim - https://github.com/parndt/jquery-html5-placeholder-shim
+- [ui_shim] HTML5 shim/shiv for IE -- http://ejohn.org/blog/html5-shiv/  http://code.google.com/p/html5shiv/ (or use modernizr?)
+- [processing] RMagick / minimagick
 - [requests] HasScope
 - [requests] will-paginate (+bootstrap-will-paginate)
 - [dev] rails-best-practices (and the other output gem for debugging)
@@ -328,8 +339,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [dev] RailsErd
 - [production] Airbrake + API Key
 - [production] EngineYard for deployment
-- [ux] Backbone integration + Skim
-- [views] Nested Form
 - [?] SeedFu
 - [?] Launchy
 - [?] Growl & rb-notify etc.
