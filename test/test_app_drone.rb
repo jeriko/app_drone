@@ -24,9 +24,7 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :simple_cov
-    template.add :nifty_generators, nifty_config: true
-    template.add :rspec
+    template.add :devise
 
     template.render_to_file
   end

@@ -27,9 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'nifty-generators', :group=>:development
-@generator.gem 'rspec-rails', :group=>["development", "test"]
-@generator.gem 'simplecov', :require=>false, :group=>:test
+@generator.gem 'devise'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -116,27 +114,9 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::NiftyGenerators
+# AppDrone::Devise
 # ---
-generate 'nifty:config'
-# --- 
-# AppDrone::Rspec
-# ---
-generate "rspec:install"
-
-# --- 
-# AppDrone::SimpleCov
-# ---
-@generator.create_file '.simplecov', <<-SIMPLECOV
-SimpleCov.start 'rails' do
-  # any custom configs like groups and filters can be here at a central place
-end
-SIMPLECOV
-
-# --- 
-# AppDrone::SimpleCov
-# ---
-@generator.prepend_file 'spec/spec_helper.rb', "require 'simplecov'\n"
+generate 'devise:install'
 
 
     # This should be removed when the database drone is installed

@@ -272,6 +272,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [views] **SimpleForm** with optional Country Select and automatic Twitter Bootstrap integration
 - [views] **NestedForm** for managing multiple models in a single form
 - [auth] **Sorcery** for no-frills user authentication
+- [auth] **Devise**, a flexible authentication solution for Rails with Warden
 - [auth] **CanCan** for role-based authorization
 - [auth] **EasyRoles**,to add roles to your User models
 - [model] **Migrant** for easier schema management
