@@ -287,11 +287,12 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [controller] **Responders** from Plataformatec
 - [controller] **HasScope** for mapping filters to controller actions
 - [controller] **WillPaginate** with automatic Bootstrap integration
-- [misc] **LetterOpener** to preview email in the browser instead of sending it\
+- [misc] **LetterOpener** to preview email in the browser instead of sending it
 - [misc] **Chronic** for natural language date parsing
 - [misc] **Timecop** - time travelling for Ruby
 - [misc] **NiftyGenerators**, a collection of useful Rails generator scripts
 - [misc] **NewRelic** app performance monitoring
+- [misc] **Whenever** clear syntax for writing and deploying cron jobs
 - [uploads] **Carrierwave** file uploading plus optional Fog cloud storage
 - [uploads] **Remotipart**, for AJAX file uploads with jQuery
 - [test] **RSpec** for BDD

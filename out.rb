@@ -27,7 +27,7 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'devise'
+@generator.gem 'whenever', :require=>false
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -114,9 +114,9 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::Devise
+# AppDrone::Whenever
 # ---
-generate 'devise:install'
+@generator.run 'wheneverize .'
 
 
     # This should be removed when the database drone is installed
