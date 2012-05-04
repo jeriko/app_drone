@@ -24,7 +24,8 @@ class AppDroneTest < Test::Unit::TestCase
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :whenever
+    template.add :git
+    template.add :html5_placeholder_shim
 
     template.render_to_file
   end

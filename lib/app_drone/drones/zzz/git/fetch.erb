@@ -1,0 +1,6 @@
+<% fetches.each do |f| %>
+  <% url = f.is_a?(Hash) ? github_repo_url(f[:github]) : f %>
+  inside '<%= tmp_path %>' do
+    @generator.run 'git clone <%= url %>'
+  end
+<% end %>

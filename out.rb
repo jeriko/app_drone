@@ -27,7 +27,6 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'whenever', :require=>false
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -49,6 +48,7 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
+//= require jquery.html5-placeholder-shim
 
 COFFEE
 
@@ -114,9 +114,20 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::Whenever
+# AppDrone::Git
 # ---
-@generator.run 'wheneverize .'
+
+  
+  inside 'git_tmp' do
+    @generator.run 'git clone git://github.com/jcampbell1/jquery-html5-placeholder-shim.git'
+  end
+
+
+# --- 
+# AppDrone::Html5PlaceholderShim
+# ---
+
+@generator.copy_file './git_tmp/jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js', 'app/assets/javascripts/jquery.html5-placeholder-shim.js'
 
 
     # This should be removed when the database drone is installed

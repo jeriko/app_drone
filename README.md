@@ -283,6 +283,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] **Bootstrap** by Twitter
 - [ui] **Gritter** for jQuery growl-like notifications
 - [ui] **Underscore.js** utility belt
+- [ui_shim] HTML5 placeholder shim
 - [ux] **Ember** (the Ember.js library)
 - [controller] **Responders** from Plataformatec
 - [controller] **HasScope** for mapping filters to controller actions
@@ -332,11 +333,8 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [ui] jQuery UI (vendor + theme etc.)
 - [ui_shim] pie.htc for IE
 - [ui_shim] jQuery shims
-- [ui_shim] HTML5 placeholder shim - https://github.com/parndt/jquery-html5-placeholder-shim
 - [ui_shim] HTML5 shim/shiv for IE -- http://ejohn.org/blog/html5-shiv/  http://code.google.com/p/html5shiv/ (or use modernizr?)
 - [processing] RMagick / minimagick
-- [requests] HasScope
-- [requests] will-paginate (+bootstrap-will-paginate)
 - [dev] rails-best-practices (and the other output gem for debugging)
 - [dev] Pivotal tracker
 - [dev] RailsErd
