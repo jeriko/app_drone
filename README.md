@@ -269,6 +269,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [base] **Cleanup**
 - [base] **HighVoltage** by ThoughtBot
 - [base] **Flair** - drones use this to demonstrate their working functionality
+- [base] **Git** commit your repo, and allow drones to fetch external files via git
 - [views] **SimpleForm** with optional Country Select and automatic Twitter Bootstrap integration
 - [views] **NestedForm** for managing multiple models in a single form
 - [auth] **Sorcery** for no-frills user authentication
@@ -308,7 +309,6 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [test] Capybara
 - [test] Shoulda
 - [dev] Guard
-- [source-control] Git
 - [requests] InheritedResources (deprecated)
 - [requests] UserAgent blocking script
 - [mailing] SendGrid https://github.com/stephenb/sendgrid
