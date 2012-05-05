@@ -2,4 +2,5 @@
 source = git.locate('jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js')
 dest = 'app/assets/javascripts/jquery.html5-placeholder-shim.js'
 %>
-@generator.copy_file '<%= source %>', '<%= dest %>'
+
+@generator.run 'cp <%= source %> <%= dest %>'

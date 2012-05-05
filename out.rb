@@ -35,6 +35,15 @@ run_bundle
 
   end
 
+  def final
+    
+# --- 
+# AppDrone::Git
+# ---
+@generator.remove_dir 'git_tmp'
+
+  end
+
 
   def leftovers
 
@@ -127,13 +136,17 @@ FLAIR
 # AppDrone::Html5PlaceholderShim
 # ---
 
-@generator.copy_file './git_tmp/jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js', 'app/assets/javascripts/jquery.html5-placeholder-shim.js'
+
+@generator.run 'cp git_tmp/jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js app/assets/javascripts/jquery.html5-placeholder-shim.js'
 
 
     # This should be removed when the database drone is installed
     rake 'db:create'
     rake 'db:migrate'
 
+    
+    final
+    
 
     # Drone Notices
     

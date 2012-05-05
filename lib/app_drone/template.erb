@@ -17,9 +17,9 @@ class AppBuilder < Rails::AppBuilder
     # either way, this method is stupid.
   end
 
-<% overridden_generator_methods.each do |m| %>
+<% generator_methods.each do |m| %>
   def <%= m %>
-    super
+    <%= 'super' if overridden_generator_method?(m) %>
 <%= @directives[m].join("\n") %>
   end
 <% end %>
@@ -32,6 +32,9 @@ class AppBuilder < Rails::AppBuilder
     rake 'db:create'
     rake 'db:migrate'
 
+    <% if generator_methods.include?(:final) %>
+    final
+    <% end %>
 
     # Drone Notices
     <% drone_notices.each do |drone, notices| %>

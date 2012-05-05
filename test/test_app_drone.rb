@@ -17,14 +17,14 @@ class AppDroneTest < Test::Unit::TestCase
 
   def test_dependants
     d = AppDrone::Bundle.dependants
-    puts AppDrone::Drone.drones
+    drones = AppDrone::Drone.drones
   end
 
   def test_basic_behavior
     template = Template.new
     add_defaults_to_template(template)
 
-    template.add :git
+    template.add :git, commit: false
     template.add :html5_placeholder_shim
 
     template.render_to_file

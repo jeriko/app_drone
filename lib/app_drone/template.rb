@@ -17,11 +17,17 @@ class Template
   end
   
   def leftover_directives; @directives[:leftovers] || [] end
-  def overridden_generator_methods; @directives.keys - [:leftovers] end
+  def generator_methods; @directives.keys - [:leftovers] end
+  def overridable_generator_methods; [:gemfile] end
+  def overridden_generator_method?(m); overridable_generator_methods.include?(m) end
 
   def do!(d,drone)
     generator_method = drone.class.generator_method || :leftovers
     (@directives[generator_method] ||= []) << d
+  end
+
+  def do_finally!(d,drone)
+    (@directives[:final] ||= []) << d
   end
 
   def notify!(notice,drone)

@@ -62,6 +62,10 @@ class Drone
     @template.do! render(partial), self
   end
 
+  def do_finally!(partial)
+    @template.do_finally! render(partial), self
+  end
+
   # DSL: Integration-specific options
   attr_accessor :params
   class << self  
