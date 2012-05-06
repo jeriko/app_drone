@@ -1,6 +1,11 @@
 module AppDrone
 class Template
-  def initialize; @drones = {}; @directives = {}; @drone_notices = {} end
+
+  def initialize
+    @drones = Hash.new{|h,k| h[k] = []}
+    @directives = Hash.new{|h,k| h[k] = []}
+    @drone_notices = Hash.new{|h,k| h[k] = []}
+  end
 
   def add(ref,*params)
     klass = ref.is_a?(Class)? ref : ref.to_sym.to_app_drone_class
@@ -16,22 +21,22 @@ class Template
     return i_klass
   end
   
-  def leftover_directives; @directives[:leftovers] || [] end
+  def leftover_directives; @directives[:leftovers] end
   def generator_methods; @directives.keys - [:leftovers] end
   def overridable_generator_methods; [:gemfile] end
   def overridden_generator_method?(m); overridable_generator_methods.include?(m) end
 
   def do!(d,drone)
     generator_method = drone.class.generator_method || :leftovers
-    (@directives[generator_method] ||= []) << d
+    @directives[generator_method] << d
   end
 
   def do_finally!(d,drone)
-    (@directives[:final] ||= []) << d
+    @directives[:final] << d
   end
 
   def notify!(notice,drone)
-    (@drone_notices[drone.class] ||= []) << notice.gsub("'","\\'").gsub('"','\\"') # escape quotes
+    @drone_notices[drone.class] << notice.gsub("'","\\'").gsub('"','\\"') # escape quotes
   end
   
   def render!
