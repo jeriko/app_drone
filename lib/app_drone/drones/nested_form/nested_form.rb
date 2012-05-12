@@ -3,7 +3,7 @@ class NestedForm < Drone
   desc "Conveniently manage multiple models in a single form"
   category :views
 
-  depends_on :bundle
+  depends_on :bundle, :javascript
 
   def align
     bundle.add 'nested_form'
