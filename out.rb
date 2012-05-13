@@ -27,20 +27,12 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
+@generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
 
 run_bundle
 @generator.options = @generator.options.dup
 @generator.options[:skip_bundle] = true
 @generator.options.freeze
-
-  end
-
-  def final
-    
-# --- 
-# AppDrone::Git
-# ---
-@generator.remove_dir 'git_tmp'
 
   end
 
@@ -57,7 +49,6 @@ js_asset_path = File.join %w(app assets javascripts application.js)
 //= require jquery
 //= require jquery_ujs
 //= require init
-//= require jquery.html5-placeholder-shim
 
 COFFEE
 
@@ -79,6 +70,7 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
+@import 'compass_twitter_bootstrap_awesome'
 
 SASS
 
@@ -113,6 +105,16 @@ FileUtils.mkpath 'app/views/pages'
 h1 Flair!
 
 
+h3 Bootstrap
+
+.btn-group
+  a.btn.btn-primary.btn-large Shiny!
+  
+  a.btn.btn-large
+    i.icon-thumbs-up
+    |  with Font Awesome!
+  
+
 FLAIR
 
 # --- 
@@ -122,30 +124,11 @@ FLAIR
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
 
-# --- 
-# AppDrone::Git
-# ---
-
-  
-  inside 'git_tmp' do
-    @generator.run 'git clone git://github.com/jcampbell1/jquery-html5-placeholder-shim.git'
-  end
-
-
-# --- 
-# AppDrone::Html5PlaceholderShim
-# ---
-
-
-@generator.run 'cp git_tmp/jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js app/assets/javascripts/jquery.html5-placeholder-shim.js'
-
 
     # This should be removed when the database drone is installed
     rake 'db:create'
     rake 'db:migrate'
 
-    
-    final
     
 
     # Drone Notices

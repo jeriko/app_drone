@@ -15,7 +15,7 @@ class Template
   def drone_objects; @drones.values end
   def drone_classes; @drones.keys end
   def drone_notices; @drone_notices end
-  def hook?(klass); !@drones[klass].nil? end
+  def hook?(klass); !(@drones[klass].nil? || @drones[klass] == []) end
   def hook(klass)
     raise "No such drone: #{klass}" unless i_klass = @drones[klass]
     return i_klass
