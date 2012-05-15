@@ -1,0 +1,14 @@
+erb_index_path = File.join %w(app views layouts application.html.erb)
+@generator.remove_file(erb_index_path)
+haml_index_path = File.join %w(app views layouts application.html.haml)
+@generator.create_file haml_index_path, <<-HAML
+!!!
+%html
+	%head
+		%title #{app_name}
+		= stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+		= csrf_meta_tag
+	%body{:class => "#{controller.controller_name}"}
+		= yield
+HAML
