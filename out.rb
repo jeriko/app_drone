@@ -27,7 +27,8 @@ class AppBuilder < Rails::AppBuilder
 @generator.gem 'compass-rails'
 @generator.gem 'slim-rails'
 @generator.gem 'high_voltage'
-@generator.gem 'compass_twitter_bootstrap', :git=>"git://github.com/vwall/compass-twitter-bootstrap.git", :group=>:assets
+@generator.gem 'rack-cache', :require=>"rack/cache"
+@generator.gem 'dragonfly'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -70,7 +71,6 @@ COFFEE
 /*= require_self */
 
 @import 'compass'
-@import 'compass_twitter_bootstrap_awesome'
 
 SASS
 
@@ -105,16 +105,6 @@ FileUtils.mkpath 'app/views/pages'
 h1 Flair!
 
 
-h3 Bootstrap
-
-.btn-group
-  a.btn.btn-primary.btn-large Shiny!
-  
-  a.btn.btn-large
-    i.icon-thumbs-up
-    |  with Font Awesome!
-  
-
 FLAIR
 
 # --- 
@@ -123,6 +113,11 @@ FLAIR
 @generator.remove_file File.join %w(public index.html)
 @generator.remove_file File.join %w(app assets images rails.png)
 @generator.remove_file File.join %w(README.rdoc)
+
+# --- 
+# AppDrone::Dragonfly
+# ---
+@generator.add_file 'config/initializers/dragonfly.rb', "require 'dragonfly/rails/images'"
 
 
     # This should be removed when the database drone is installed
