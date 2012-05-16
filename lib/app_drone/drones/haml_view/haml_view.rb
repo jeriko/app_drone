@@ -2,7 +2,7 @@ module AppDrone
 class HamlView < Drone
   desc "An alternative to SlimView. Do not install both."
 
-  category :view
+  category :views
   depends_on :bundle
 
   def align
