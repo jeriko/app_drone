@@ -3,7 +3,7 @@ class Underscore < Drone
   desc "Adds the underscore.js utility belt to your app"
   category :ui
 
-  depends_on :bundle
+  depends_on :bundle, :javascript
 
   def align
     bundle.add 'underscore-rails'
