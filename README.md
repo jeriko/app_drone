@@ -272,6 +272,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [base] **Git** commit your repo, and allow drones to fetch external files via git
 - [views] **SimpleForm** with optional Country Select and automatic Twitter Bootstrap integration
 - [views] **NestedForm** for managing multiple models in a single form
+- [views] **HamlView** (Haml, laid out right)
 - [auth] **Sorcery** for no-frills user authentication
 - [auth] **Devise**, a flexible authentication solution for Rails with Warden
 - [auth] **CanCan** for role-based authorization
@@ -297,6 +298,7 @@ AppDrone is not for everyone. It's highly opinionated about how a Rails app shou
 - [misc] **Whenever** clear syntax for writing and deploying cron jobs
 - [uploads] **Carrierwave** file uploading plus optional Fog cloud storage
 - [uploads] **Remotipart**, for AJAX file uploads with jQuery
+- [uploads] **Dragonfly**, a Rack framework for on-the-fly image handling
 - [test] **RSpec** for BDD
 - [test] **Factory Girl** test fixtures
 - [test] **SimpleCov** code coverage for Ruby 1.9, with automatic RSpec integration

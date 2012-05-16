@@ -25,10 +25,7 @@ class AppBuilder < Rails::AppBuilder
 # ---
 @generator.gem 'therubyracer'
 @generator.gem 'compass-rails'
-@generator.gem 'slim-rails'
-@generator.gem 'high_voltage'
-@generator.gem 'rack-cache', :require=>"rack/cache"
-@generator.gem 'dragonfly'
+@generator.gem 'haml-rails'
 
 run_bundle
 @generator.options = @generator.options.dup
@@ -75,39 +72,6 @@ COFFEE
 SASS
 
 # --- 
-# AppDrone::SlimView
-# ---
-erb_index_path = File.join %w(app views layouts application.html.erb)
-@generator.remove_file(erb_index_path)
-slim_index_path = File.join %w(app views layouts application.html.slim)
-@generator.create_file slim_index_path, <<-SLIM
-doctype 5
-html
-  head
-    title #{app_name}
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
-
-  body class=controller_name
-    = yield
-SLIM
-
-# --- 
-# AppDrone::HighVoltage
-# ---
-FileUtils.mkpath 'app/views/pages'
-
-# --- 
-# AppDrone::Flair
-# ---
-@generator.create_file 'app/views/pages/flair.html.slim', <<-FLAIR
-h1 Flair!
-
-
-FLAIR
-
-# --- 
 # AppDrone::Cleanup
 # ---
 @generator.remove_file File.join %w(public index.html)
@@ -115,9 +79,23 @@ FLAIR
 @generator.remove_file File.join %w(README.rdoc)
 
 # --- 
-# AppDrone::Dragonfly
+# AppDrone::HamlView
 # ---
-@generator.add_file 'config/initializers/dragonfly.rb', "require 'dragonfly/rails/images'"
+erb_index_path = File.join %w(app views layouts application.html.erb)
+@generator.remove_file(erb_index_path)
+haml_index_path = File.join %w(app views layouts application.html.haml)
+@generator.create_file haml_index_path, <<-HAML
+!!!
+%html
+  %head
+    %title #{app_name}
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body{:class => controller_name}
+    = yield
+HAML
 
 
     # This should be removed when the database drone is installed
