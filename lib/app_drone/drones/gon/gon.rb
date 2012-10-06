@@ -1,6 +1,6 @@
 module AppDrone
 class Gon < Drone
-  desc "Growl-like notifications for jQuery"
+  desc "Data porting from controller to client-side"
   category :controller
 
   depends_on :bundle, :javascript
