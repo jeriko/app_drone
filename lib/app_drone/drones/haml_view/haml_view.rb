@@ -4,6 +4,7 @@ class HamlView < Drone
 
   category :views
   depends_on :bundle
+  pairs_with :gon
 
   def align
     bundle.add 'haml-rails'

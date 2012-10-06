@@ -20,7 +20,7 @@ class Template
     raise "No such drone: #{klass}" unless i_klass = @drones[klass]
     return i_klass
   end
-  
+
   def leftover_directives; @directives[:leftovers] end
   def generator_methods; @directives.keys - [:leftovers] end
   def overridable_generator_methods; [:gemfile] end
@@ -38,7 +38,7 @@ class Template
   def notify!(notice,drone)
     @drone_notices[drone.class] << notice.gsub("'","\\'").gsub('"','\\"') # escape quotes
   end
-  
+
   def render!
     return if @rendered
     DependencyChain.check_dependencies!(drone_classes)

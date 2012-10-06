@@ -23,7 +23,7 @@ class AppDroneTest < Test::Unit::TestCase
   def test_basic_behavior
     template = Template.new
     add_defaults_to_template(template)
-
+    template.add :quiet_assets
     # template.add :new_drone_to_test
 
     template.render_to_file

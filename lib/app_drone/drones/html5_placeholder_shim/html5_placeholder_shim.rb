@@ -1,7 +1,7 @@
 module AppDrone
 class Html5PlaceholderShim < Drone
   desc "HTML5 placeholder support for older browsers"
-  category :ui_shim
+  category :shim
 
   depends_on :javascript, :git
 
