@@ -1,3 +1,9 @@
+# Deprecated
+
+Check out the shiny new Rails 4 rewrite - https://github.com/recombinary/dronr
+
+## Abandon hope all ye who enter here
+
 # AppDrone
 
 **Avoid the mundane.**
